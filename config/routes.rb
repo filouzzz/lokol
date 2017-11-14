@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'profils/show'
+  get 'profils/new', to: 'profils#new'
 
-  get 'profils/new'
+  post 'profils/new', to: 'profils#new'
 
-  get 'profils/create'
+  post 'profils/create', to: 'profils#create'
+  get 'profils/create', to: 'profils#create', as: "profils"
 
   get 'profils/update'
 
