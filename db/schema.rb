@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114103801) do
+ActiveRecord::Schema.define(version: 20171114104719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audiences", force: :cascade do |t|
+    t.string "gender"
+    t.string "title"
+    t.integer "age_min"
+    t.integer "age_max"
+    t.string "location"
+    t.string "interest"
+    t.bigint "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_audiences_on_campaign_id"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string "description"
+    t.string "message"
+    t.string "facebook_link"
+    t.string "twitter_link"
+    t.string "instagram_link"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_campaigns_on_company_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.integer "street_number"
+    t.integer "zip_code"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +74,7 @@ ActiveRecord::Schema.define(version: 20171114103801) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "audiences", "campaigns"
+  add_foreign_key "campaigns", "companies"
+  add_foreign_key "companies", "users"
 end
