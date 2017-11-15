@@ -13,6 +13,9 @@
       <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+                <%= t(".sign_out", default: "Log out") %>
+              <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
