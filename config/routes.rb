@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   get 'profils/edit'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations'}
+
   root to: 'pages#home'
 
 

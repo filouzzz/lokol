@@ -1,9 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-
-  protected
-
   def after_sign_up_path_for(resource)
-   redirect_to '/profils/new' # Or :prefix_to_your_route
+   '/profils/new'  # Or :prefix_to_your_route
   end
 
   # before_action :configure_sign_up_params, only: [:create]
@@ -56,9 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
