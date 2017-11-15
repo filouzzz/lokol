@@ -9,4 +9,9 @@
   <li><%= @profil.city %></li>
   <li><%= @profil.avatar %></li>
   <li><%= @profil.country %></li>
+  <li>
+    <% if @profil.avatar? %>
+      <%= cl_image_tag @profil.avatar.path %>
+    <% end %>
+  </li>
 </ul>

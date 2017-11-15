@@ -1,7 +1,6 @@
 class ProfilsController < ApplicationController
   before_action :set_profil, only: [:show]
-
-
+  
   def show
 
   end
