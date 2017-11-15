@@ -1,6 +1,6 @@
 class ProfilsController < ApplicationController
-before_action :set_profil, only: [:create, :show]
-
+  before_action :set_profil, only: [:show]
+  
   def show
 
   end
@@ -28,7 +28,7 @@ before_action :set_profil, only: [:create, :show]
   private
 
   def set_profil
-    @profil = Profil.find_by(user: current_user)
+   @profil = Profil.find_by(user: current_user)
   end
 
   def profil_params
