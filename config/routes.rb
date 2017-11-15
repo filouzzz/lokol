@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
   get 'profils/show'
   get 'profils/new', to: 'profils#new'
 
@@ -11,8 +12,8 @@ Rails.application.routes.draw do
 
   get 'profils/edit'
 
-  #mount Attachinary::Engine => "/attachinary"
   devise_for :users, controllers: { registrations: 'users/registrations'}
+
   root to: 'pages#home'
 
 
@@ -20,3 +21,4 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+

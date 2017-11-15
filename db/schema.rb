@@ -11,9 +11,25 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20171114161338) do
-
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.bigint "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+    t.index ["attachinariable_type", "attachinariable_id"], name: "attch"
+  end
 
   create_table "audiences", force: :cascade do |t|
     t.string "gender"
@@ -40,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171114161338) do
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photos"
     t.index ["company_id"], name: "index_campaigns_on_company_id"
   end
 
@@ -54,6 +71,7 @@ ActiveRecord::Schema.define(version: 20171114161338) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo"
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
@@ -85,6 +103,7 @@ ActiveRecord::Schema.define(version: 20171114161338) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
