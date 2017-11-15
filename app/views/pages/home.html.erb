@@ -1,10 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<<<<<<< HEAD
-<%= current_user.email  %>
-=======
 
- <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
->>>>>>> 032e987ecbdb8dc86b599fd770640c9d2fa6143d
+<%= link_to destroy_user_session_path, method: :delete do %>
+<i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+<% end %>
+
