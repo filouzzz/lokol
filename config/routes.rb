@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   mount Attachinary::Engine => "/attachinary"
+
   get 'profils/show'
   get 'profils/new', to: 'profils#new'
 
@@ -17,6 +19,13 @@ Rails.application.routes.draw do
   }
 
   root to: 'pages#home'
+
+
+  resources :companies do
+    resources :campaigns do
+      get "/create_facebook_campaign",  to: "campaigns#create_facebook_campaign", as: "create_facebook"
+    end
+  end
 
 
 
