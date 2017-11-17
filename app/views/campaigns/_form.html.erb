@@ -1,0 +1,10 @@
+<%= simple_form_for [@company, @campaigns] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :message %>
+  <%= f.input :facebook_link %>
+  <%= f.input :twitter_link %>
+  <%= f.input :instagram_link %>
+  <%= f.submit message, class: "btn btn-primary" %>
+<% end %>
