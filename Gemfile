@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 ruby '2.3.5'
 
 gem 'devise'
@@ -8,6 +8,8 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
+gem 'omniauth-facebook'
+gem 'uuidtools'
 
 gem 'country_select'
 gem 'facebook_ads', '~> 0.1'
