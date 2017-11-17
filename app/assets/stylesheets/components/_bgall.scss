@@ -1,0 +1,39 @@
+.bg-home{
+  position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+  //top: 0;
+  //background-color:#d8d7d7;
+  background-image: url("https://media.giphy.com/media/3xz2BRU6WpaxKiPzuE/giphy.gif");
+  background-size:cover;
+  background-position: center;
+  color:white;
+}
+
+.bg-home-form{
+  background-color: #eee;
+  padding-left: 0;
+  float: left;
+  min-height: 100vh;
+  padding: 15px;
+  width:300px;
+}
+
+.form-home-div{
+
+  top: 50%;
+  background: #FFFFFF;
+    position: absolute;
+    z-index: 40;
+    border-radius: 10px;
+
+}
+
+.image-upload{
+  width:200px;
+  height:150px;
+  background:#f3f3f3;
+  border:2px dashed #e8e8e8;
+}
