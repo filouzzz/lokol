@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114161338) do
+ActiveRecord::Schema.define(version: 20171116125628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,31 +32,50 @@ ActiveRecord::Schema.define(version: 20171114161338) do
   end
 
   create_table "audiences", force: :cascade do |t|
-    t.string "gender"
-    t.string "title"
-    t.integer "age_min"
-    t.integer "age_max"
+    t.string "adset_gender"
+    t.string "adset_title"
+    t.integer "adset_age_min"
+    t.integer "adset_age_max"
     t.string "location"
     t.string "interest"
     t.bigint "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "adset_targeting_geo_locations_cities"
+    t.string "adset_targeting_geo_locations_countries"
+    t.string "adset_targeting_geo_locations_country_group"
     t.index ["campaign_id"], name: "index_audiences_on_campaign_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
-    t.string "title"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "campaign_name"
+    t.datetime "adset_start_date"
+    t.datetime "adset_end_date"
     t.string "description"
     t.string "message"
-    t.string "facebook_link"
-    t.string "twitter_link"
-    t.string "instagram_link"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photos"
+    t.string "fb_campaign_id"
+    t.string "campaign_objective"
+    t.string "adset_bid_amount"
+    t.string "adset_billing_event"
+    t.integer "adset_daily_budget"
+    t.string "ad_status"
+    t.string "ad_name"
+    t.string "ad_adset_id"
+    t.string "ad_creative_object_story_spec_page_id"
+    t.string "ad_creative_object_story_spec_plink_data"
+    t.string "ad_creative_object_story_spec_plink_data_link"
+    t.string "ad_creative_object_story_spec_plink_data_message"
+    t.string "ad_creative_object_story_spec_plink_data_name"
+    t.string "ad_creative_object_story_spec_plink_data_attachment_style"
+    t.string "ad_creative_object_story_spec_plink_data_call_to_action"
+    t.string "ad_creative_title"
+    t.string "ad_creative_body"
+    t.string "ad_creative_object_ur"
+    t.string "ad_creative_object_image_file"
     t.index ["company_id"], name: "index_campaigns_on_company_id"
   end
 
