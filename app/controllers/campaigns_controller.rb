@@ -4,6 +4,9 @@ class CampaignsController < ApplicationController
 
   before_action :set_company, only: [:new, :create, :show, :edit, :update]
   before_action :set_campaign, only: [:show, :edit, :update]
+  before_action :set_campaign_by_campaign_id, only: [:create_facebook_campaign]
+
+  include FacebookAdsHelper
 
   def new
     @campaign = Campaign.new
@@ -12,14 +15,19 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.company = @company
-    @campaign.company = current_user
     @campaign.save!
     redirect_to company_campaign_path(@company, @campaign)
+  end
 
-
+  def create_facebook_campaign
+    # from facebook helper:
+    create_campaign(@campaign.campaign_name)
+    redirect_back(fallback_location: company_campaign_path(@campaign.company, @campaign))
   end
 
   def show
+    # from facebook helper:
+    @fb_campaign = show_campaign(@campaign.campaign_name)
   end
 
   def edit
@@ -33,19 +41,18 @@ class CampaignsController < ApplicationController
 
   private
 
-  def set_flat
+  def set_company
     @company = Company.find(params[:company_id])
   end
 
-  def set_booking
-    @campaign = Booking.find(params[:id])
+  def set_campaign
+    @campaign = Campaign.find(params[:id])
+  end
+  def set_campaign_by_campaign_id
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
-  def booking_params
-    params.require(:company).permit(:title :start_date :end_date :description :message)
+  def campaign_params
+    params.require(:campaign).permit(:campaign_name, :description)
   end
-
-
-
-
 end
