@@ -33,7 +33,7 @@ class CampaignsController < ApplicationController
       # start: @campaign.adset_start_date,
       # end: @campaign.adset_end_date,
       adset_bid_amount: @campaign.adset_bid_amount,
-      adset_billing_event: @campaign.adset_billing_event,
+      adset_billing_event: @campaign.campaign_objective,
       adset_daily_budget: @campaign.adset_daily_budget,
       campaign_id: @campaign.id,
       adset_age_min: @campaign.adset_age_min,
