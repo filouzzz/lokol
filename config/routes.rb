@@ -21,12 +21,10 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :campaigns do
-      get "/create_facebook_campaign",  to: "campaigns#create_facebook_campaign", as: "create_facebook"
+      post "/create_facebook_campaign",  to: "campaigns#create_facebook_campaign", as: "create_facebook"
+      post "/create_facebook_adset", to: "campaigns#create_facebook_adset", as: "create_adset"
     end
   end
-
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -32,7 +32,7 @@
       </ul>
     </div>
   <% else %>
-    <%= link_to "create Facebook campaign",  company_campaign_create_facebook_path(@company, @campaign), class: 'btn btn-primary' %>
+    <%= button_to "create adsets campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn btn-primary' %>
   <% end %>
 
 

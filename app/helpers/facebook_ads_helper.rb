@@ -18,14 +18,36 @@ module FacebookAdsHelper
     campaign
   end
 
-def create_ad_set(adset_details)
+def create_adset(adset_details)
   adset = ad_account.adsets.create({
     name: adset_details[:adset_name],
-    campaign_id: adset_details[:id],
+    campaign_id: adset_details[:fb_id],
     bid_amount: adset_details[:adset_bid_amount],
     billing_event: adset_details[:adset_billing_event],
-    daily_budget: adset_details[:adset_daily_budget]
-})
+    daily_budget: adset_details[:adset_daily_budget],
+    targeting: {
+      age_max: adset_details[:adset_age_max],
+      age_min: adset_details[:adset_age_min],
+      geo_locations: {
+        countries: [
+          adset_details[:adset_location]
+        ]
+      },
+      publisher_platforms: [
+        "facebook",
+      ],
+      facebook_positions: [
+        "feed",
+      ],
+      instagram_positions: [
+        "stream",
+      ],
+      device_platforms: [
+        "mobile",
+        "desktop",
+      ],
+    }
+  })
 end
 
   def show_fb_campaign(name)
