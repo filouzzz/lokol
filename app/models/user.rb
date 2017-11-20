@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauth_providers => [:facebook]
   has_many :authorizations, :dependent => :destroy
   has_many :companies
+  has_one :profile
+
 def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -25,5 +27,5 @@ def self.find_for_facebook_oauth(auth)
     end
     return user
   end
-  
+
 end
