@@ -12,7 +12,6 @@ gem 'omniauth-facebook'
 gem 'uuidtools'
 
 gem 'country_select'
-gem 'facebook_ads', '~> 0.1'
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
