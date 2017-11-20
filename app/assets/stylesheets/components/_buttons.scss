@@ -4,4 +4,12 @@
   background-color: rgb(250, 250, 250);
   border: none;
   box-shadow: 1px 1px 1px lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: 0.2 ease;
+}
+
+.btn-lightgrey:hover {
+  background-color: lightgrey;
 }

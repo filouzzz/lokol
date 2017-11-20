@@ -15,8 +15,12 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.company = @company
-    @campaign.save!
-    redirect_to company_campaign_path(@company, @campaign)
+    if @campaign.save!
+      flash[:notice] = "Campaign #{@campaign.campaign_name} created!"
+      redirect_to company_campaign_path(@company, @campaign)
+    else
+      render :new
+    end
   end
 
   def create_facebook_campaign
