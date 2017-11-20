@@ -1,24 +1,14 @@
 Rails.application.routes.draw do
 
+  root to: 'pages#home'
+
   mount Attachinary::Engine => "/attachinary"
 
-  get 'profils/show'
-  get 'profils/new', to: 'profils#new'
-
-  post 'profils/new', to: 'profils#new'
-
-  post 'profils/create', to: 'profils#create'
-  get 'profils/create', to: 'profils#create', as: "profils"
-
-  get 'profils/update'
-
-  get 'profils/edit'
+  resources :profiles, except: [:destroy ]
 
   devise_for :users, controllers: { registrations: 'users/registrations',
              :omniauth_callbacks => "users/omniauth_callbacks"
   }
-
-  root to: 'pages#home'
 
 
   resources :companies do

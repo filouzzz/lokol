@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
-   '/profils/new'  # Or :prefix_to_your_route
+   '/profiles/new'  # Or :prefix_to_your_route
   end
 
   # before_action :configure_sign_up_params, only: [:create]

@@ -1,0 +1,17 @@
+<h1>Profils#show</h1>
+<p>Find me in app/views/profils/show.html.erb</p>
+<ul>
+  <li><%= @profile.first_name %></li>
+  <li><%= @profile.last_name %></li>
+  <li><%= @profile.street %></li>
+  <li><%= @profile.street_number %></li>
+  <li><%= @profile.zip_code %></li>
+  <li><%= @profile.city %></li>
+  <li><%= @profile.avatar %></li>
+  <li><%= @profile.country %></li>
+  <li>
+    <% if @profile.avatar? %>
+      <%= cl_image_tag @profile.avatar.path %>
+    <% end %>
+  </li>
+</ul>
