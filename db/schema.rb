@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116125628) do
+ActiveRecord::Schema.define(version: 20171120105616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,10 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.string "campaign_name"
     t.datetime "adset_start_date"
     t.datetime "adset_end_date"
-    t.string "description"
-    t.string "message"
+    t.string "adset_name"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photos"
     t.string "fb_campaign_id"
     t.string "campaign_objective"
     t.string "adset_bid_amount"

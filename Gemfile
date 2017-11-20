@@ -10,7 +10,6 @@ gem 'rails', '5.1.4'
 gem 'redis'
 
 gem 'country_select'
-gem 'facebook_ads', '~> 0.1'
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
