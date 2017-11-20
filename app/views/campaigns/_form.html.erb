@@ -1,6 +1,6 @@
 
 <div class="col-sm-6 col-xs-12">
-  <h2>Campaign Objective</h2>
+  <h2>Objective</h2>
   <%= simple_form_for [@company, @campaign] do |f| %>
   <%= f.input :campaign_name, label: false, placeholder: "Name of your campaign" %>
   <%= f.input :campaign_objective, collection: ['LINK_CLICKS', 'APP_INSTALLS', 'IMPRESSIONS', 'OFFER_CLAIMS', 'PAGE_LIKES', 'POST_ENGAGEMENT', 'VIDEO_VIEWS', 'TWO_SECOND_CONTINUOUS_VIDEO_VIEWS', 'COMPLETED_VIDEO_VIEWS', 'VIDEO_VIEWS_15S'], selected: 1 %>
@@ -8,7 +8,7 @@
   <%= f.input :adset_name, label: false, placeholder: "name of the set of ads" %>
 </div>
 <div class="col-sm-6 col-xs-12">
-  <h2>Campaign Adset</h2>
+  <h2>Budget & Audience</h2>
   <%= f.input :adset_bid_amount, label: false, placeholder: "Enter bid amount" %>
   <%= f.input :adset_daily_budget, label: false, placeholder: "Enter daily budget" %>
   <%= f.input :adset_age_min, label: false, placeholder: "Enter min age of target audience" %>
@@ -16,6 +16,6 @@
   <%= f.input :adset_location, collection: ["AU", "GB", "NZ", "US", "NL"], selected: 1, label: false, prompt: "Select participation country" %>
 </div>
 <div class="col-xs-12 text-center">
-  <%= f.submit 'Start my campaign', class: "btn btn-primary" %>
+  <%= f.submit 'Start my campaign', class: "btn-lightgrey" %>
   <% end %>
 </div>
