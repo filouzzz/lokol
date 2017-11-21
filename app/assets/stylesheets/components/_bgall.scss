@@ -122,3 +122,19 @@ section{
   background:#f3f3f3;
   border:2px dashed #e8e8e8;
 }
+.bg-company{
+  background-image:url("/assets/lokoshop-11.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.padtopcamp{
+  padding-top:20px;
+
+}
+.padbottomcamp{
+  padding-bottom:5px;
+}

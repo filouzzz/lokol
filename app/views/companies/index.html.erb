@@ -1,22 +1,32 @@
 <%#= render "form", company_message: "Adit this Company info" %>
-<div class="row">
-  <% @companies.each do |company| %>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h2><%= company.name %></h2>
-        <p><%= company.street_number %> <%= company.street %></p>
+<div class="bg-company">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 padtopcamp">
+      <% @companies.each do |company| %>
+
+      <div class="product padbottomcamp">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>95</div>
+        </div>
+        <img src="/assets/lokoshop-9.jpg" alt="kudoz" class="product-image hidden-xs">
+        <div class='product-body'>
+         <h2><%= company.name %></h2>
+         <p><%= company.street_number %> <%= company.street %></p>
+       </div>
+       <div class='product-body'>
         <p><%= company.city %></p>
         <p><%= company.country %></p>
         <p><%= company.email %></p>
       </div>
-      <p><%= link_to "See all my campaigns",  company_campaigns_path(company) %></p>
-      <p><%= link_to "Create a new local Ad!",  new_company_campaign_path(company) %></p>
     </div>
+    <ul class="list-inline product-controls">
+       <li><%= link_to 'See all my campaigns', company_campaigns_path(company), class: "btn rounded-camp"%></li>
+       <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
+    </ul>
   </div>
   <% end %>
-
-
 </div>
-
-
+</div>
+</div>
