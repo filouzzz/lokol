@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'previews/demo'
+
   root to: 'pages#home'
 
   mount Attachinary::Engine => "/attachinary"
