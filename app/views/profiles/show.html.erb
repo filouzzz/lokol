@@ -16,11 +16,11 @@
   </li>
 </ul>
 
-<%= link_to "Update Profile", edit_profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
+<%= link_to "Update Profile", edit_profile_path(current_user.profile), class: "btn rounded-camp" %>
 <% if current_user.companies.empty? %>
-  <%= link_to "Add company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Add company", new_company_path, class: "btn rounded-camp" %>
 <% else %>
-  <%= link_to "Company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Company", '/companies', class: "btn rounded-camp" %>
 <% end %>
 
 
