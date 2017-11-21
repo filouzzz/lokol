@@ -32,7 +32,9 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% if current_user.nil? || current_user.profile.avatar.nil? %>
+          <% if current_user.nil? || current_user.profile.nil? %>
+        <%= image_tag "logo-black.png", class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% elsif current_user.profile.avatar.nil?  %>
         <%= image_tag "logo-black.png", class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
         <% else %>
         <%= cl_image_tag current_user.profile.avatar.path, class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
