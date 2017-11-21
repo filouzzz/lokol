@@ -1,29 +1,34 @@
-<div class="col-md-offset-3 col-xs-12 col-md-6">
-  <small>Company: <%= @campaign.company.name %></small>
+<style></style>
+<main class="grid">
+  <div  class="box">
+    <h2> <%= @campaign.company.name %> </h2>
+    <hr>
 
   <h3><%= @campaign.campaign_name %></h3>
-  <p><%= @campaign.adset_start_date %></p>
-  <p><%= @campaign.adset_end_date %></p>
   <p><%= @campaign.adset_name %></p>
   <p><%= @campaign.company_id %></p>
-  <p><%= @campaign.created_at %></p>
-  <p><%= @campaign.updated_at %></p>
   <p><%= @campaign.fb_campaign_id %></p>
-  <p><%= @campaign.campaign_objective %></p>
-  <p><%= @campaign.adset_bid_amount %></p>
-  <p><%= @campaign.adset_billing_event %></p>
-  <p><%= @campaign.adset_daily_budget %></p>
+
+
   <p><%= @campaign.ad_status %></p>
   <p><%= @campaign.ad_name %></p>
   <p><%= @campaign.ad_adset_id %></p>
-  <p><%= @campaign.ad_creative_object_story_spec_page_id %></p>
-  <p><%= @campaign.ad_creative_object_story_spec_plink_data %></p>
+    <!-- CSS Grid Layout browser support text -->
+  </div>
+  <div class="box">
+    <% if @fb_campaign != [] %>
+    Status: PENDING
+    <% else %>
+    Status: LIVE
+    <% end %>
+      <p>
+        Objective:
+        <%= @campaign.campaign_objective %>
+      </p>
+  </div>
 
-
-  <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign) %>
-
-
-  <% if @fb_campaign != [] %>
+  <div class="box" style="display: flex; flex-direction: column; justify-content: flex-end;">
+    <% if @fb_campaign != [] %>
     <div class="card fb-blue white">
       <h3> Facebook Ad</h3>
       <ul>
@@ -31,9 +36,26 @@
         <li>Name:<%= @fb_campaign.first.name %></li>
       </ul>
     </div>
-  <% else %>
-    <%= button_to "create adsets campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn btn-primary' %>
-  <% end %>
+    <% else %>
+    <%= button_to "Launch facebook campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
+    <% end %>
+  </div>
+  <div class="box">
+  <h2>Audience</h2>
+  <p>
+  Ages:
+<%= @campaign.adset_age_min %>
+  to
+  <%= @campaign.adset_age_max %></p>
+  <p>
+    <%= @campaign.adset_location %>
+  </p>
+  </div>
+<%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+
+  <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
+
+</main>
 
 
-</div>
+

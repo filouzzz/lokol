@@ -1,0 +1,87 @@
+
+  // Grid Demo Important CSS Stuff
+main {
+  // If your browser supports grid, do this
+  // Grid only works when enabled in certain browsers
+  // Works OOTB w/Firefox Nightly and Safari Technical Preview
+  // Won't work on your phone
+  @supports ( display: grid ) {
+    display: grid;
+    grid-template-columns: minmax(300px, 50vw) 1fr 2fr;
+      grid-template-rows: 100px 300px 100px 50px 150px;
+    grid-gap: 3px;
+  }
+}
+
+
+// RESPONSIVENESS
+
+
+// Color Variables for demo
+$color-1: white;
+$color-2: complement($color-1);
+
+// Amount of steps to iterate through color mix
+$steps: 9;
+
+// Mix colors to go from $color-1 ro @color-2 with 9 total steps
+@for $i from 0 to $steps {
+  .box:nth-of-type(#{$i + 1}) {
+    background: mix($color-1, $color-2, percentage($i / ($steps - 1)));
+  }
+}
+
+.box {
+  &:first-of-type {
+    //  grid-column-start: 1;
+    //  grid-column-end: 2;
+    // grid-column is short-hand for the above two properties
+    grid-column: 1;
+
+    // grid-row-start: 1;
+    // grid-row-end: 4;
+    // grid-row is short-hand for the above two properties
+    grid-row: 1 / 4;
+  }
+
+  // start div 2 at the second grid line and end at the 4th grid line
+  // only in row 1
+  &:nth-of-type(2) {
+    grid-column: 2 / span 2;
+  }
+
+  // start 5th grid item on grid line 1 and end on line 4
+  // overlaps the first grid item, neat, huh?
+
+  &:nth-of-type(5) {
+    grid-column: 1 / 4;
+    grid-row: 3;
+
+    // Change color/opacity only to show how it overlays
+    background-color: #FCD036;
+    opacity: .6;
+  }
+
+  &:nth-of-type(9) {
+    grid-column: 1 / -1;
+  }
+}
+
+
+main {
+  margin-top: 20px;
+  padding: 0;
+}
+
+.box {
+  font-weight: 700;
+  box-sizing: border-box;
+  padding: 1rem;
+  box-shadow: 1px 1px 1px lightgrey;
+}
+
+@media(min-width: 500px) {
+  .box {
+    display: block;
+  }
+}
