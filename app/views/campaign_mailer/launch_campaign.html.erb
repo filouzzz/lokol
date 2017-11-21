@@ -1,0 +1,4 @@
+<div class="container">
+  <p class="text-center">  congratulation ! your campaign <%= @campaign.campaign_name %> has just been launched, you can access all informations and make additional changes by going to your profile</p>
+  <%= link_to "voir votre campagne", company_campaign_url(@campaign.company, @campaign), :method => "get" %>
+</div>
