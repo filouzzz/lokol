@@ -12,8 +12,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "your company", "/companies", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "campaigns", "/campaigns", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to destroy_user_session_path, method: :delete do %>
                 <%= t(".sign_out", default: "Log out") %>
