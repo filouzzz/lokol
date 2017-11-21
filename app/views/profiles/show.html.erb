@@ -1,26 +1,34 @@
-<h1><%= @profile.first_name.capitalize %>: Profile </h1>
+<div class="bg-profile">
+<div class="container">
+  <div class="row">
 
-<ul>
+    <div class="col-md-6 "><% if @profile.avatar? %>
+      <%= cl_image_tag @profile.avatar.path, class: "img-profile-page" %>
+      <% end %></div>
 
-  <li>Last Name: <%= @profile.last_name %></li>
-  <li>Street Name: <%= @profile.street %></li>
-  <li>Street Number: <%= @profile.street_number %></li>
-  <li>Zip Code: <%= @profile.zip_code %></li>
-  <li>City: <%= @profile.city %></li>
-  <li><%= @profile.avatar %></li>
-  <li>Country: <%= @profile.country %></li>
-  <li>
-    <% if @profile.avatar? %>
-      <%= cl_image_tag @profile.avatar.path %>
-    <% end %>
-  </li>
-</ul>
+      <div class="col-md-6 bg-profile-description">
+        <div class="header-profile"><h2><%= @profile.first_name.capitalize %>: Profile </h2></div>
 
-<%= link_to "Update Profile", edit_profile_path(current_user.profile), class: "btn rounded-camp" %>
-<% if current_user.companies.empty? %>
-  <%= link_to "Add company", new_company_path, class: "btn rounded-camp" %>
-<% else %>
-  <%= link_to "Company", '/companies', class: "btn rounded-camp" %>
-<% end %>
-
-
+        <ul>
+          <li><strong>Last Name:</strong> <%= @profile.last_name %></li>
+          <hr>
+          <li><strong>Street Name:</strong> <%= @profile.street %></li>
+          <hr>
+          <li><strong>Street Number:</strong> <%= @profile.street_number %></li>
+          <hr>
+          <li><strong>Zip Code:</strong> <%= @profile.zip_code %></li>
+          <hr>
+          <li><strong>City:</strong> <%= @profile.city %></li>
+          <hr>
+          <li><strong>Country:</strong> <%= @profile.country %></li>
+        </ul>
+      </div>
+         <%= link_to "Update Profile", edit_profile_path(current_user.profile), class: "btn rounded-profile" %>
+          <% if current_user.companies.empty? %>
+          <%= link_to "Add company", new_company_path, class: "btn rounded-profile" %>
+          <% else %>
+          <%= link_to "Company", '/companies', class: "btn rounded-profile" %>
+          <% end %>
+    </div>
+  </div>
+</div>
