@@ -1,0 +1,61 @@
+<style></style>
+<main class="grid">
+  <div  class="box">
+    <h2> <%= @campaign.company.name %> </h2>
+    <hr>
+
+  <h3><%= @campaign.campaign_name %></h3>
+  <p><%= @campaign.adset_name %></p>
+  <p><%= @campaign.company_id %></p>
+  <p><%= @campaign.fb_campaign_id %></p>
+
+
+  <p><%= @campaign.ad_status %></p>
+  <p><%= @campaign.ad_name %></p>
+  <p><%= @campaign.ad_adset_id %></p>
+    <!-- CSS Grid Layout browser support text -->
+  </div>
+  <div class="box">
+    <% if @fb_campaign != [] %>
+    Status: PENDING
+    <% else %>
+    Status: LIVE
+    <% end %>
+      <p>
+        Objective:
+        <%= @campaign.campaign_objective %>
+      </p>
+  </div>
+
+  <div class="box" style="display: flex; flex-direction: column; justify-content: flex-end;">
+    <% if @fb_campaign != [] %>
+    <div class="card fb-blue white">
+      <h3> Facebook Ad</h3>
+      <ul>
+        <li>ID:<%= @fb_campaign.first.id %></li>
+        <li>Name:<%= @fb_campaign.first.name %></li>
+      </ul>
+    </div>
+    <% else %>
+    <%= button_to "Launch facebook campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
+    <% end %>
+  </div>
+  <div class="box">
+  <h2>Audience</h2>
+  <p>
+  Ages:
+<%= @campaign.adset_age_min %>
+  to
+  <%= @campaign.adset_age_max %></p>
+  <p>
+    <%= @campaign.adset_location %>
+  </p>
+  </div>
+<%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+
+  <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
+
+</main>
+
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116125628) do
+ActiveRecord::Schema.define(version: 20171120144724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,32 +31,28 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.index ["attachinariable_type", "attachinariable_id"], name: "attch"
   end
 
-  create_table "audiences", force: :cascade do |t|
-    t.string "adset_gender"
-    t.string "adset_title"
-    t.integer "adset_age_min"
-    t.integer "adset_age_max"
-    t.string "location"
-    t.string "interest"
-    t.bigint "campaign_id"
+  create_table "authorizations", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "user_id"
+    t.string "token"
+    t.string "secret"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "name"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "adset_targeting_geo_locations_cities"
-    t.string "adset_targeting_geo_locations_countries"
-    t.string "adset_targeting_geo_locations_country_group"
-    t.index ["campaign_id"], name: "index_audiences_on_campaign_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
     t.string "campaign_name"
     t.datetime "adset_start_date"
     t.datetime "adset_end_date"
-    t.string "description"
-    t.string "message"
+    t.string "adset_name"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photos"
     t.string "fb_campaign_id"
     t.string "campaign_objective"
     t.string "adset_bid_amount"
@@ -76,6 +72,9 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.string "ad_creative_body"
     t.string "ad_creative_object_ur"
     t.string "ad_creative_object_image_file"
+    t.integer "adset_age_min"
+    t.integer "adset_age_max"
+    t.string "adset_location"
     t.index ["company_id"], name: "index_campaigns_on_company_id"
   end
 
@@ -94,7 +93,7 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
-  create_table "profils", force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "street"
@@ -106,7 +105,7 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profils_on_user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,8 +126,7 @@ ActiveRecord::Schema.define(version: 20171116125628) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "audiences", "campaigns"
   add_foreign_key "campaigns", "companies"
   add_foreign_key "companies", "users"
-  add_foreign_key "profils", "users"
+  add_foreign_key "profiles", "users"
 end

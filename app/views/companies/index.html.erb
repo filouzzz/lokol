@@ -1,0 +1,11 @@
+<%#= render "form", company_message: "Adit this Company info" %>
+<% @companies.each do |c| %>
+  <%= link_to c.name, company_path(c) %>
+
+  <%= c.street_number %>
+  <%= c.street %>
+  <%= c.city %>
+  <%= c.country %>
+  <%= c.email %>
+<% end %>
+
