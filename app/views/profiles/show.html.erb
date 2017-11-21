@@ -1,17 +1,26 @@
-<h1>Profils#show</h1>
-<p>Find me in app/views/profils/show.html.erb</p>
+<h1><%= @profile.first_name.capitalize %>: Profile </h1>
+
 <ul>
-  <li><%= @profile.first_name %></li>
-  <li><%= @profile.last_name %></li>
-  <li><%= @profile.street %></li>
-  <li><%= @profile.street_number %></li>
-  <li><%= @profile.zip_code %></li>
-  <li><%= @profile.city %></li>
+
+  <li>Last Name: <%= @profile.last_name %></li>
+  <li>Street Name: <%= @profile.street %></li>
+  <li>Street Number: <%= @profile.street_number %></li>
+  <li>Zip Code: <%= @profile.zip_code %></li>
+  <li>City: <%= @profile.city %></li>
   <li><%= @profile.avatar %></li>
-  <li><%= @profile.country %></li>
+  <li>Country: <%= @profile.country %></li>
   <li>
     <% if @profile.avatar? %>
       <%= cl_image_tag @profile.avatar.path %>
     <% end %>
   </li>
 </ul>
+
+<%= link_to "Update Profile", edit_profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
+<% if current_user.companies.empty? %>
+  <%= link_to "Add company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<% else %>
+  <%= link_to "Company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+<% end %>
+
+

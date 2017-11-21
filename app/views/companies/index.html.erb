@@ -1,9 +1,11 @@
 <%#= render "form", company_message: "Adit this Company info" %>
+
 <div class="bg-company">
 <div class="container">
   <div class="row">
     <div class="col-md-12 padtopcamp">
       <% @companies.each do |company| %>
+
 
       <div class="product padbottomcamp">
         <div class='product-upvote'>
@@ -22,6 +24,7 @@
       </div>
     </div>
     <ul class="list-inline product-controls">
+       <li><%= link_to "Edit company", edit_company_path(c), class: "navbar-wagon-item navbar-wagon-link" %></li>
        <li><%= link_to 'See all my campaigns', company_campaigns_path(company), class: "btn rounded-camp"%></li>
        <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
        <li><%= link_to 'edit a new local Ad!', edit_company_path(company), class: "btn rounded-camp"%></li>
