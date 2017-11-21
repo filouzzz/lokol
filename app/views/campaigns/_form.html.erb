@@ -1,24 +1,21 @@
-<%= simple_form_for [@company, @campaign] do |f| %>
-  <%= f.input :campaign_name %>
-  <%= f.input :adset_start_date %>
-  <%= f.input :adset_end_date %>
-  <%= f.input :description %>
-  <%= f.input :message %>
-  <%= f.input :company_id %>
-  <%= f.input :created_at %>
-  <%= f.input :updated_at %>
-  <%= f.input :photos %>
-  <%= f.input :fb_campaign_id %>
-  <%= f.input :campaign_objective %>
-  <%= f.input :adset_bid_amount %>
-  <%= f.input :adset_billing_event %>
-  <%= f.input :adset_daily_budget %>
-  <%= f.input :ad_status %>
-  <%= f.input :ad_name %>
-  <%= f.input :ad_adset_id %>
-  <%= f.input :ad_creative_object_story_spec_page_id %>
-  <%= f.input :ad_creative_object_story_spec_plink_data %>
-  <%= f.submit campaign_message, class: "btn btn-primary" %>
-<% end %>
 
+<div class="col-sm-6 col-xs-12">
+  <h2>Objective</h2>
+  <%= simple_form_for [@company, @campaign] do |f| %>
+  <%= f.input :campaign_name, placeholder: "Name of your campaign" %>
+  <%= f.input :campaign_objective, collection: ['LINK_CLICKS', 'APP_INSTALLS', 'IMPRESSIONS', 'OFFER_CLAIMS', 'PAGE_LIKES', 'POST_ENGAGEMENT', 'VIDEO_VIEWS', 'TWO_SECOND_CONTINUOUS_VIDEO_VIEWS', 'COMPLETED_VIDEO_VIEWS', 'VIDEO_VIEWS_15S'], selected: 1 %>
 
+  <%= f.input :adset_name, placeholder: "name of the set of ads" %>
+</div>
+<div class="col-sm-6 col-xs-12">
+  <h2>Budget & Audience</h2>
+  <%= f.input :adset_bid_amount, placeholder: "Enter bid amount" %>
+  <%= f.input :adset_daily_budget, placeholder: "Enter daily budget" %>
+  <%= f.input :adset_age_min, placeholder: "Enter min age of target audience" %>
+  <%= f.input :adset_age_max, placeholder: "Enter max age of target audience" %>
+  <%= f.input :adset_location, collection: ["AU", "GB", "NZ", "US", "NL"], selected: 1, prompt: "Select participation country" %>
+</div>
+<div class="col-xs-12 text-center">
+  <%= f.submit 'Start my campaign', class: "btn-lightgrey" %>
+  <% end %>
+</div>

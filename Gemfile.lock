@@ -90,9 +90,6 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.0)
     execjs (2.7.0)
-    facebook_ads (0.6.0)
-      hashie (~> 3.4)
-      rest-client (>= 1.6)
     facebookads (0.2.11.0)
       faraday
       json
@@ -287,7 +284,6 @@ DEPENDENCIES
   coffee-rails
   country_select
   devise
-  facebook_ads (~> 0.1)
   facebookads
   figaro
   font-awesome-sass

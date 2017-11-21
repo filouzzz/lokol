@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo-black.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My company", "/companies", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to destroy_user_session_path, method: :delete do %>
                 <%= t(".sign_out", default: "Log out") %>
               <% end %>
@@ -20,7 +20,11 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% if current_user.nil? || current_user.profile.avatar.nil? %>
+        <%= image_tag "logo-black.png", class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% else %>
+        <%= cl_image_tag current_user.profile.avatar.path, class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <% if current_user.profile.nil? %>

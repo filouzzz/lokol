@@ -1,10 +1,13 @@
-<p>Hello <%= current_user.email %></p>
+<p>Hello <%= current_user.profile.first_name %> <%= current_user.profile.last_name %></p>
+
 <%= simple_form_for [@company] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :street %>
+  <%= f.input :name, label: "Name of the company or subsidiary" %>
   <%= f.input :street_number %>
+  <%= f.input :street %>
   <%= f.input :city %>
   <%= f.input :country %>
   <%= f.input :email %>
   <%= f.submit company_message, class: "btn btn-primary" %>
+
 <% end %>
+
