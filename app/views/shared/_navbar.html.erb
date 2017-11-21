@@ -12,8 +12,12 @@
       <!-- Links when logged in -->
       <div class="navbar-wagon-item">
       <div class="dropdown">
+      <% if current_user.profile.nil? %>
+      <%= link_to "New Profile", new_profile_path %>
+      <% else %>
       <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
-      <% if current_user.companies.nil? %>
+      <% end %>
+      <% if current_user.companies.empty? %>
       <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else  %>
       <%= link_to "Company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
@@ -29,10 +33,7 @@
         <div class="dropdown">
           <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <% if current_user.profile.nil? %>
-                <%= link_to "Profile", new_profile_path %>
-              <% end %>            </li>
+
             <li>
               <%= link_to "root" do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>

@@ -1,4 +1,4 @@
-<p>Hello <%= current_user.email %></p>
+<h3>Please enter the needed information to create your profile</h3>
 <%= simple_form_for [@profile] do |f| %>
  <%= f.input :first_name, placeholder: 'First name', label: false %>
 <%= f.input :last_name, placeholder: 'Last name ', label: false%>
