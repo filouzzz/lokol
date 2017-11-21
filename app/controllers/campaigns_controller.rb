@@ -2,11 +2,16 @@ class CampaignsController < ApplicationController
 
   # require 'facebook_ads'
 
-  before_action :set_company, only: [:new, :create, :show, :edit, :update]
+  before_action :set_company, only: [:index, :new, :create, :show, :edit, :update]
   before_action :set_campaign, only: [:show, :edit, :update]
   before_action :set_campaign_by_campaign_id, only: [:create_facebook_campaign]
 
   include FacebookAdsHelper
+
+ def index
+    @campaigns = @company.campaigns
+    @created_campaigns = Campaign.where(user: current_user)
+  end
 
   def new
     @campaign = Campaign.new
