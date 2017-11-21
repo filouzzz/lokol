@@ -29,20 +29,45 @@
   padding-top:20px;
 }
 .upload-message{
-position: relative;
-    z-index: 10;
-    padding: 0;
-    width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  width: 100%;
 }
 
 .upload-message textarea{
-    overflow: hidden;
-    min-height: 70px;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    resize: none;
-
+  overflow: hidden;
+  min-height: 70px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  resize: none;
 }
 
+.btn-medium {
+  color: white;
+  background-color:#0006ff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+
+
+.center-flex{
+  display: flex;
+}
+
+.flexlearn{
+  margin: 0 auto;
+  position: relative;
+  z-index: 1029;
+  //top:-100px;
+  top:50%;
+}
