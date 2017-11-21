@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171120125251) do
+ActiveRecord::Schema.define(version: 20171120144724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,22 +29,6 @@ ActiveRecord::Schema.define(version: 20171120125251) do
     t.datetime "updated_at", null: false
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
     t.index ["attachinariable_type", "attachinariable_id"], name: "attch"
-  end
-
-  create_table "audiences", force: :cascade do |t|
-    t.string "adset_gender"
-    t.string "adset_title"
-    t.integer "adset_age_min"
-    t.integer "adset_age_max"
-    t.string "location"
-    t.string "interest"
-    t.bigint "campaign_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "adset_targeting_geo_locations_cities"
-    t.string "adset_targeting_geo_locations_countries"
-    t.string "adset_targeting_geo_locations_country_group"
-    t.index ["campaign_id"], name: "index_audiences_on_campaign_id"
   end
 
   create_table "authorizations", force: :cascade do |t|
