@@ -1,23 +1,28 @@
 
-
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="form-singup form-spacing">
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+      <div class="form-inputs text-center form-signup-background" >
+        <h2 class="new-header-page">Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+        <div class="form-inputs" >
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-
-<h3> IMPORTANT </h3>
+          <%= f.input :email, placeholder: 'email@mail.com', label: false, required: true, autofocus: true %>
+          <%= f.input :password, :hint => 'No special characters.', placeholder: '****** please', label: false, required: true %>
+          <%= f.input :password_confirmation, placeholder: '****** ', label: false, required: true %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "welcome", class: "rounded-white" %>
+        </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+        <h3> IMPORTANT </h3>
 <p>Dear user, if you wish to use our services for facebook advertising please make sure that you either sign up with facebook or that the email account of your facebook account and the one you sign up with are the same!</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

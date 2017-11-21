@@ -11,7 +11,6 @@
 
       <!-- Links when logged in -->
       <%= link_to "My company", "/companies", class: "navbar-wagon-item navbar-wagon-link" %>
-
       <%= link_to "profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to destroy_user_session_path, method: :delete do %>
                 <%= t(".sign_out", default: "Log out") %>
