@@ -1,17 +1,35 @@
 <%#= render "form", company_message: "Adit this Company info" %>
-<% @companies.each do |c| %>
-  <ul>
-  <li>
 
-  <p>Company name: <%= link_to c.name, company_path(c) %></p>
-  <p>Street Number: <%= c.street_number %></p>
-  <p>Street: <%= c.street %></p>
-  <p>City: <%= c.city %></p>
-  <p>Country: <%= c.country %></p>
-  <p>Email: <%= c.email %></p>
-  </li>
-  <%= link_to "Edit company", edit_company_path(c), class: "navbar-wagon-item navbar-wagon-link" %>
-  <%= link_to "Create a new local Ad!",  new_company_campaign_path(c), class: "navbar-wagon-item navbar-wagon-link" %>
-  </ul>
-<% end %>
+<div class="bg-company">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 padtopcamp">
+      <% @companies.each do |company| %>
 
+
+      <div class="product padbottomcamp">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>95</div>
+        </div>
+        <img src="/assets/lokoshop-9.jpg" alt="kudoz" class="product-image hidden-xs">
+        <div class='product-body'>
+         <h2><%= company.name %></h2>
+         <p><%= company.street_number %> <%= company.street %></p>
+       </div>
+       <div class='product-body'>
+        <p><%= company.city %></p>
+        <p><%= company.country %></p>
+        <p><%= company.email %></p>
+      </div>
+    </div>
+    <ul class="list-inline product-controls">
+       <li><%= link_to "Edit company", edit_company_path(c), class: "navbar-wagon-item navbar-wagon-link" %></li>
+       <li><%= link_to 'See all my campaigns', company_campaigns_path(company), class: "btn rounded-camp"%></li>
+       <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
+    </ul>
+  </div>
+  <% end %>
+</div>
+</div>
+</div>
