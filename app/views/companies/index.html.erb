@@ -1,11 +1,17 @@
 <%#= render "form", company_message: "Adit this Company info" %>
 <% @companies.each do |c| %>
-  <%= link_to c.name, company_path(c) %>
+  <ul>
+  <li>
 
-  <%= c.street_number %>
-  <%= c.street %>
-  <%= c.city %>
-  <%= c.country %>
-  <%= c.email %>
+  <p>Company name: <%= link_to c.name, company_path(c) %></p>
+  <p>Street Number: <%= c.street_number %></p>
+  <p>Street: <%= c.street %></p>
+  <p>City: <%= c.city %></p>
+  <p>Country: <%= c.country %></p>
+  <p>Email: <%= c.email %></p>
+  </li>
+  <%= link_to "Edit company", edit_company_path(c), class: "navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Create a new local Ad!",  new_company_campaign_path(c), class: "navbar-wagon-item navbar-wagon-link" %>
+  </ul>
 <% end %>
 

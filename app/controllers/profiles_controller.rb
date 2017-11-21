@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show]
+  before_action :set_profile, only: [:show, :edit, :update]
 
   def show
 
@@ -20,6 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @profile.update(profile_params)
+    redirect_to profile_path(@profile)
   end
 
   def edit

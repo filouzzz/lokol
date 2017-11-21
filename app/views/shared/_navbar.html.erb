@@ -10,12 +10,19 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="navbar-wagon-item">
+      <div class="dropdown">
+      <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user.companies.nil? %>
+      <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else  %>
+      <%= link_to "Company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-              <% end %>
+
+      </div>
+      </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -25,11 +32,9 @@
             <li>
               <% if current_user.profile.nil? %>
                 <%= link_to "Profile", new_profile_path %>
-              <% else %>
-                <%= link_to "Profile", profile_path(current_user.profile) %>
               <% end %>            </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to "root" do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
