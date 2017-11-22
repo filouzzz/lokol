@@ -1,4 +1,8 @@
-function preview_comment()
+function preview_user()
+{
+ $("#preview_div_user").html($("#text_user").val());
+
+}function preview_comment()
 {
  $("#preview_div_comment").html($("#text_comment").val());
 }
