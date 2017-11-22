@@ -7,7 +7,7 @@
     padding: 15px;
   //top: 0;
   //background-color:#d8d7d7;
-  background-image: url("img6.png");
+  background-image: url("/assets/lokoshop-14.jpg");
   background-size:cover;
   background-position: center;
   color:white;
@@ -69,11 +69,12 @@ section{
     //border-right: 17px solid transparent;
     //padding: 0 8px 0 0;
   background-color:rgb(255, 255, 255);;
-  height: 500px;
+  //height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+  padding: 10px;
 
 }
 
@@ -84,7 +85,7 @@ section{
  background-attachment: fixed;
  background-position: center;
  background-repeat: no-repeat;
- background-size: cover
+ background-size: cover;
 }
 
 .learn-3{
@@ -94,7 +95,7 @@ section{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
 }
 
 .bg-home-form{
@@ -126,7 +127,16 @@ section{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+}
+
+.bg-campaigns{
+  background-image:url("/assets/lokoshop-19.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .padtopcamp{
@@ -143,7 +153,7 @@ section{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
 }
 
 .bg-profile-description{

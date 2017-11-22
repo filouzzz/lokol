@@ -1,0 +1,190 @@
+.form_container_preview
+{
+  display:inline-block;
+  text-align: center;
+  padding-top: 10px
+}
+
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:995px;
+}
+
+#output_image
+{
+ max-width:100%;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+#preview_div_title {
+  font: bold 18px Times;
+  padding-bottom: 5px;
+}
+
+#preview_div_description {
+  font: 15px Times;
+}
+#preview_div_url {
+  padding-top: 5px;
+  font:12px helvetica;
+  color: #9197a3;
+  text-transform: uppercase;
+
+
+}
+
+#download {
+  margin: 10px auto;
+  position: relative;
+  max-width: 490px;
+  overflow: hidden;
+  line-height: 1.38;
+}
+
+.fb {
+  background-color: #F6F7F8;
+  font-family: helvetica, arial, 'lucida grande', sans-serif;
+  font-size: 12px;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+.fb .post {
+  background-color: #fff;
+  padding: 12px;
+}
+
+#download .post .top {
+  margin-bottom: 11px;
+}
+
+#download .post .top .img {
+  float: left;
+  margin-right: 8px;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+#download .post .top .name a {
+  color: #3b5998;
+  font-size: 14px;
+}
+
+
+
+#download .post .text-message {
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#download .post .txtbottom {
+  margin-top: 10px;
+}
+
+#download .post .txtbottom a {
+  color: #6d84b4;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+i.shares {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -249px -465px;
+  width: 14px;
+  display: inline-block;
+  height: 15px;
+  bottom: 2px;
+  margin-right: 2px;
+}
+
+#download .post .top .name .sponsored {
+  display: block;
+  color: #9197a3;
+  font-size: 12px;
+  padding-top: 3px;
+  box-sizing: border-box;
+}
+
+#download .post_likes, #download .post_shares {
+  background-color: #F6F7F8;
+  padding: 8px 12px;
+  border-top: 1px solid #e1e2e3;
+  margin: 0;
+}
+
+#download .post_likes a, #download .post_shares a {
+  color: #6d84b4;
+}
+
+
+
+#download .post_write_comment .txt .text_block {
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+#download .post_write_comment .txt .text_block .comment {
+  border: 1px solid #dcdee3;
+  min-height: 32px;
+  padding-left: 5px;
+  color: #141823;
+  background-color: #fff;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  box-sizing: border-box;
+}
+
+#download .post_write_comment {
+  background-color: #F6F7F8;
+  padding: 8px 12px;
+  border-top: 1px solid #e1e2e3;
+
+}
+
+#download .post_write_comment .img {
+  float: left;
+  margin-right: 8px;
+}
+
+.pull-left {
+  float: left!important;
+}
+
+#download .post_write_comment .txt .text_block .comment .pull-right.text-right {
+  text-align: right;
+}
+
+.pull-right {
+  float: right!important;
+}
+
+#download .post_write_comment .txt .text_block .comment .pull-right.text-right .fot_ico {
+  margin: 0 8px;
+}
+
+#download .post .img_message {
+  font-size: 14px;
+  word-wrap: break-word;
+
+  min-height: 32px;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: #141823;
+  background-color: #fff;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  box-sizing: border-box;
+}

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'previews/demo'
+
   root to: 'pages#home'
 
   mount Attachinary::Engine => "/attachinary"
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-
   resources :companies do
     resources :campaigns do
       post "/create_facebook_campaign",  to: "campaigns#create_facebook_campaign", as: "create_facebook"
