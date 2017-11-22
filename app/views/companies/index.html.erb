@@ -24,10 +24,12 @@
       </div>
     </div>
     <ul class="list-inline product-controls">
+    <% if current_user.companies.any? %>
        <li><%= link_to "Edit company", edit_company_path(company), class: "btn rounded-camp" %>
-       <li><%= link_to "Destroy company",destroy_company_path(company) , class: "btn rounded-camp" %>
+       <li><%= link_to "Destroy company",edit_company_path(company) , class: "btn rounded-camp" %></li>
 
-       </li>
+
+
        <% if company.campaigns.empty? %>
        <li><%= link_to 'Create campaigns', new_company_campaign_path(company), class: "btn rounded-camp"  %></li>
        <% else %>
@@ -35,12 +37,14 @@
        <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
 
        <% end %>
+        <% end %>
     </ul>
-    <ul class="list-inline product-controls">
-    <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp" %></li>
-    </ul>
+
   </div>
   <% end %>
+  <ul class="list-inline product-controls">
+    <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp" %></li>
+    </ul>
 </div>
 </div>
 </div>
