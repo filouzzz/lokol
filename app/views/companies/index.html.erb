@@ -22,16 +22,36 @@
         <p><%= company.country %></p>
         <p><%= company.email %></p>
       </div>
+<<<<<<< Updated upstream
+=======
+      <div>
+        <% if company.campaigns == [] %>
+        <p>You do not have any Ad Campaign</p>
+        <% else %>
+        <p><%= link_to "See all my campaigns",  company_campaigns_path(company), class: "btn btn-lightgrey"  %></p>
+        <% end %>
+
+        <p><%= link_to "Create a new Ad Campaign!",  new_company_campaign_path(company), class: "btn btn-lightgrey"  %></p>
+      </div>
+
+>>>>>>> Stashed changes
     </div>
     <ul class="list-inline product-controls">
-       <li><%= link_to "Edit company", edit_company_path(company), class: "btn rounded-camp" %></li>
+       <li><%= link_to "Edit company", edit_company_path(company), class: "btn rounded-camp" %>
+       <li><%= link_to "Destroy company",destroy_company_path(company) , class: "btn rounded-camp" %>
+
+       </li>
        <% if company.campaigns.empty? %>
        <li><%= link_to 'Create campaigns', new_company_campaign_path(company), class: "btn rounded-camp"  %></li>
        <% else %>
        <li><%= link_to 'See all my campaigns', company_campaigns_path(company), class: "btn rounded-camp"%></li>
        <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
+
        <% end %>
 
+    </ul>
+    <ul class="list-inline product-controls">
+    <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp" %></li>
     </ul>
   </div>
   <% end %>
