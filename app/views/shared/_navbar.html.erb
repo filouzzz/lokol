@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo-black.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,26 +10,39 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <div class="navbar-wagon-item">
+      <div class="dropdown">
+      <% if current_user.profile.nil? %>
+      <%= link_to "New Profile", new_profile_path %>
+      <% else %>
+      <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+      <% if current_user.companies.empty? %>
+      <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% else  %>
+      <%= link_to "My company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-              <% end %>
+
+      </div>
+      </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% if current_user.nil? || current_user.profile.nil? %>
+        <%= image_tag "logo-black.png", class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% elsif current_user.profile.avatar.nil?  %>
+        <%= image_tag "logo-black.png", class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% else %>
+        <%= cl_image_tag current_user.profile.avatar.path, class: "avatar dropdown-toggle", id: "logo", data: { toggle: "dropdown" } %>
+        <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
             <li>
-              <% if current_user.profile.nil? %>
-                <%= link_to "Profile", new_profile_path %>
-              <% else %>
-                <%= link_to "Profile", profile_path(current_user.profile) %>
-              <% end %>            </li>
-            <li>
-              <%= link_to "#" do %>
+              <%= link_to "root" do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>

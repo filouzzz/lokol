@@ -1,11 +1,3 @@
-.rounded-white {
-  background-color: #f5f5f5;
-  border-color: #f5f5f5;
-  border-radius: 20px;
-  color: black;
-  font-size: 15px;
-  //margin-bottom: 10px;
-}
 .home-form-group{
       min-height: 350px;
 }
@@ -29,20 +21,316 @@
   padding-top:20px;
 }
 .upload-message{
-position: relative;
-    z-index: 10;
-    padding: 0;
-    width: 100%;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  width: 100%;
 }
 
 .upload-message textarea{
-    overflow: hidden;
-    min-height: 70px;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    resize: none;
+  overflow: hidden;
+  min-height: 70px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  resize: none;
+}
 
+.btn-medium {
+  color: white;
+  background-color:#0006ff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+
+
+.center-flex{
+  display: flex;
+}
+
+.flexlearn{
+  margin: 0 auto;
+  position: relative;
+  z-index: 1029;
+  //top:-100px;
+  top:50%;
+}
+
+.form-spacing {
+//padding: 50px;
+//margin-bottom: 15px;
+height: 80vh;
+}
+
+.bg-form {
+background-image:url("https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif
+");
+background-size: cover;
+background-position: center;
+}
+
+.form-control {
+ border: 2px solid #f5f5f5;
+ background-color: rgba(255, 255, 255, 0);
+ border-radius: 20px;
+}
+
+.rounded-sub-pass{
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.rounded-sub-pass:hover{
+  background-color: rgba(245, 245, 245, 0.15);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.rounded-camp{
+  background-color: rgba(245, 245, 245, 0);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+}
+.rounded-profile{
+  background-color: rgba(245, 245, 245, 100);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+}
+
+.rounded-login{
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+}
+.rounded-login:hover{
+  background-color: rgba(245, 245, 245, 0.15);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+}
+
+.rounded-white {
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.rounded-white-search{
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black!important;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.rounded-red {
+  background-color: #ff7885;
+  border-color: #ff7885;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-red-dest{
+  background-color: #ff7885;
+  border-color: #ff7885;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-black{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-black-dest{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-black:hover{
+  background-color: #6d6d6d;
+  border-color: #6d6d6d;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-red:hover {
+
+  border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.new-header-page {
+color: white;
+padding-top: 10px;
+}
+
+.form-control, .color-white-form {
+  color: white;
+}
+
+.file-upload-new-dest {
+  height: 100px;
+  padding:30px;
+}
+// background login page
+.form-password{
+  background-image:url("lokoshop-4.jpg
+");
+background-size: cover;
+background-position: center;
+position: relative;
+
+}
+
+.form-login-background{
+  background-color: #c5bbba;
+  padding:20px;
+  border-radius:20px;
+  margin-top:20%;
+}
+
+.form-signup-background{
+  background-color: #c5bbba;
+  padding:20px;
+  border-radius:20px;
+  margin-top:20%;
+}
+
+.form-password-background{
+  background-color: #c5bbba;
+  padding:20px;
+  border-radius:20px;
+  margin-top:20%;
+}
+
+.form-login{
+  background-image:url("bg-log.png");
+background-size: cover;
+background-position: center;
+position: relative;
+}
+
+.form-singup{
+  background-image:url("lokoshop-8.jpg");
+background-size: cover;
+background-position: center;
+height:800px;
+
+position: relative;
+}
+
+
+.checkbox{
+  color:white;
+}
+a.rounded-password{
+  margin-top:100px;
+}
+.rounded-password{
+  background-color: #f7a6ae;
+ border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-password:hover{
+  background-color: #f7a6ae;
+ border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 7px;
+  text-decoration: none;
+
+}
+
+.imgupload{
+  background-color: rgb(255, 120, 133);
+      border-radius: 40px;
+      border: 0px solid transparent;
+}
+
+.searchsize{
+height: 100px;
+color: black;
+padding:10px;
+width: 100%;
+//background:#a5a4a4;
+background-image:url("https://media.giphy.com/media/l0He3o8pL9AebplFm/giphy.gif");
+background-size:cover;
+background-position: center;
+
+}
+
+input.form-control {
+    max-width: 400px;
+    min-width: 200px;
 }
 

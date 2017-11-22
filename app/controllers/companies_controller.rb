@@ -17,7 +17,7 @@ skip_before_action :authenticate_user!, only: :index
   end
 
   def create
-    @company = Com.new(company_params)
+    @company = Company.new(company_params)
     @company.user = current_user
     @company.save!
     redirect_to company_path(@company)
