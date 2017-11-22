@@ -13,9 +13,14 @@
       <div class="product padbottomcamp">
         <div class='product-upvote'>
           <div class="product-arrow"></div>
-          <div class='product-count'>95</div>
+          <div class='product-count'><%= company.id %></div>
         </div>
-        <img src="/assets/lokoshop-9.jpg" alt="kudoz" class="product-image hidden-xs">
+        <% if company.photo.nil? %>
+        <img src="company.photo" alt="kudoz" class="product-image hidden-xs">
+        <% else %>
+
+        <%= cl_image_tag company.photo.path, class: "product-image hidden-xs" %>
+        <% end %>
         <div class='product-body'>
          <h2><%= company.name %></h2>
          <p><%= company.street_number %> <%= company.street %></p>
