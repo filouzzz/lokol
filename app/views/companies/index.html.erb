@@ -22,6 +22,19 @@
         <p><%= company.country %></p>
         <p><%= company.email %></p>
       </div>
+<<<<<<< Updated upstream
+=======
+      <div>
+        <% if company.campaigns == [] %>
+        <p>You do not have any Ad Campaign</p>
+        <% else %>
+        <p><%= link_to "See all my campaigns",  company_campaigns_path(company), class: "btn btn-lightgrey"  %></p>
+        <% end %>
+
+        <p><%= link_to "Create a new Ad Campaign!",  new_company_campaign_path(company), class: "btn btn-lightgrey"  %></p>
+      </div>
+
+>>>>>>> Stashed changes
     </div>
     <ul class="list-inline product-controls">
        <li><%= link_to "Edit company", edit_company_path(company), class: "btn rounded-camp" %>
