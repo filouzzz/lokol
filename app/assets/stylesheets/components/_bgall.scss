@@ -55,7 +55,7 @@ section{
   height:400px;
 }
 .imgbg3{
-  background-image: url("img11.jpg");
+  background-color:white;
   background-size:cover;
   background-position: center;
   color:white;
@@ -89,7 +89,7 @@ section{
 
 .learn-3{
   background-color:red;
-  background-image:url("/assets/img4.jpg");
+  background-image:url("/assets/img11.jpg");
   height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -107,13 +107,11 @@ section{
 }
 
 .form-home-div{
-
   top: 50%;
   background: #FFFFFF;
-    position: absolute;
-    z-index: 40;
-    border-radius: 10px;
-
+  position: absolute;
+  z-index: 40;
+  border-radius: 10px;
 }
 
 .image-upload{
@@ -137,4 +135,20 @@ section{
 }
 .padbottomcamp{
   padding-bottom:5px;
+}
+
+.bg-profile{
+  background-image:url("/assets/lokoshop-13.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.bg-profile-description{
+  padding-top:20px;
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
 }
