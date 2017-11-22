@@ -21,6 +21,8 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  # rajouter pour fixer les images enprod mercredi 22/11 à 19h47
+  config.secret_key = '230c4be972cfbdf8738600bf07ce230018bb3f53c380525a439597d26e0e0ca0e4bfca1019cf9d31cd9f54b9d88a1397c35f56ff3b46a6287e3965e9be860c8f'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

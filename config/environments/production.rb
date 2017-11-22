@@ -11,6 +11,10 @@ config.action_mailer.delivery_method = :smtp
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # try to fix the images  deployement
+  config.serve_static_assets = true
+  config.assets.compile = true
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
