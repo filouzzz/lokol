@@ -18,11 +18,14 @@
       <% else %>
       <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
-      <% if current_user.companies.empty? %>
-      <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <% else  %>
-      <%= link_to "My company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user.profile %>
+        <% if current_user.companies.empty?  %>
+          <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <% else  %>
+          <%= link_to "My company", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+        <% end %>
       <% end %>
+
 
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
