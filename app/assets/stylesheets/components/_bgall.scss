@@ -7,7 +7,7 @@
     padding: 15px;
   //top: 0;
   //background-color:#d8d7d7;
-  background-image: url("img6.png");
+  background-image: url("/assets/lokoshop-14.jpg");
   background-size:cover;
   background-position: center;
   color:white;
@@ -123,6 +123,15 @@ section{
 }
 .bg-company{
   background-image:url("/assets/lokoshop-11.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-campaigns{
+  background-image:url("/assets/lokoshop-19.jpg");
   min-height: 800px;
   background-attachment: fixed;
   background-position: center;
