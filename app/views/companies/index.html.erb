@@ -4,6 +4,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 padtopcamp">
+      <ul class="list-inline product-controls">
+    <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp-head" %></li>
+    </ul>
       <% @companies.each do |company| %>
 
 
@@ -22,32 +25,28 @@
         <p><%= company.country %></p>
         <p><%= company.email %></p>
       </div>
-
     </div>
+  </div>
+  <div class="col-md-6">
     <ul class="list-inline product-controls">
     <% if current_user.companies.any? %>
        <li><%= link_to "Edit company", edit_company_path(company), class: "btn rounded-camp" %>
-       <li><%= link_to "Delete the company", company_path(company), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></li>
-
-
-
+       <li><%= link_to "Delete the company", company_path(company) , class: "btn rounded-camp", method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></li>
+     </ul>
+    </div>
+  <div class="col-md-6">
+    <ul class="list-inline product-controls">
        <% if company.campaigns.empty? %>
        <li><%= link_to 'Create campaigns', new_company_campaign_path(company), class: "btn rounded-camp"  %></li>
        <% else %>
        <li><%= link_to 'See all my campaigns', company_campaigns_path(company), class: "btn rounded-camp"%></li>
        <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
-
        <% end %>
-
-        <% end %>
-
+    <% end %>
     </ul>
-
   </div>
   <% end %>
-  <ul class="list-inline product-controls">
-    <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp" %></li>
-    </ul>
+
 </div>
 </div>
 </div>
