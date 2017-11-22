@@ -24,6 +24,7 @@
       <p>
         Objective:
         <%= @campaign.campaign_objective %>
+        YOYO
       </p>
   </div>
 
@@ -37,7 +38,7 @@
       </ul>
     </div>
     <% else %>
-    <%= button_to "Launch facebook campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
+    <%= button_to "Confirm creation of the campaign on Facebook", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
     <% end %>
   </div>
   <div class="box">
