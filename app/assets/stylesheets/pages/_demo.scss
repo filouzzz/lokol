@@ -1,3 +1,10 @@
+.form_container_preview
+{
+  display:inline-block;
+  text-align: center;
+  padding-top: 10px
+}
+
 #wrapper
 {
  text-align:center;
@@ -71,12 +78,7 @@ img {
   font-size: 14px;
 }
 
-#download .post .top .name .text-when {
-  color: #9197a3;
-  font-size: 12px;
-  padding-top: 3px;
-  box-sizing: border-box;
-}
+
 
 #download .post .text-message {
   font-size: 14px;
@@ -108,8 +110,12 @@ i.shares {
   margin-right: 2px;
 }
 
-#download .post .top .name .date {
-  display: block
+#download .post .top .name .sponsored {
+  display: block;
+  color: #9197a3;
+  font-size: 12px;
+  padding-top: 3px;
+  box-sizing: border-box;
 }
 
 #download .post_likes, #download .post_shares {
