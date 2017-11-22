@@ -1,12 +1,36 @@
-<div class="wrapper"></div>
-<div class="container">
-  <div class="row" class="card">
-<p>
-<%= @campaigns.first.campaign_name %>
-</p>
-<p>
-
-
+  <div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @campaigns.each do |campaign| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="card-description">
+        <div class="thumbnail">
+          <div class="caption">
+            <h2><%= campaign.campaign_name %></h2>
+            <p><%= campaign.adset_name%></p>
+            <p><%= campaign.adset_bid_amount%></p>
+            <p><%= campaign.adset_billing_event%></p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
+<!--
+    t.string "campaign_name"
+    t.datetime "adset_start_date"
+    t.datetime "adset_end_date"
+    t.string "adset_name"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "fb_campaign_id"
+    t.string "campaign_objective"
+    t.string "adset_bid_amount"
+    t.string "adset_billing_event"
+    t.integer "adset_daily_budget"
+
+ -->

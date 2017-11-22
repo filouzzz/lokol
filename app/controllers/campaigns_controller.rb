@@ -10,7 +10,8 @@ class CampaignsController < ApplicationController
 
  def index
     @campaigns = @company.campaigns
-    @created_campaigns = Campaign.where(user: current_user)
+    # @created_campaigns = Campaign.where(user: current_user)
+    # raise
   end
 
   def new
