@@ -24,3 +24,16 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+
+
+
+.sticky_footer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  flex: auto;
+}
