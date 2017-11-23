@@ -93,7 +93,7 @@ section{
 
 .learn-3{
   background-color:red;
-  background-image:image-url("img11.jpg");
+  background-image:url("/assets/lokoshop-8.jpg");
   height: 500px;
   background-attachment: fixed;
   background-position: center;
@@ -134,12 +134,13 @@ section{
 }
 
 .bg-campaigns{
-  background-image:image-url("lokoshop-19.jpg");
+  background-image:url("/assets/lokoshop-21.jpg");
   min-height: 800px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #63715e;
 }
 
 .padtopcamp{
@@ -164,4 +165,17 @@ section{
   text-decoration: none;
   list-style-type: none;
   color: white;
+}
+
+.bg-campaign-inside{
+
+  background-color:#afb5fe;
+  padding:20px;
+  color:white!important;
+}
+.bg-campaign-inside2{
+
+  background-color:#3c49e2;
+  padding:20px;
+  color:white!important;
 }
