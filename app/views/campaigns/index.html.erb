@@ -8,7 +8,14 @@
   <img class="avatar-small" src="/assets/lokoshop-8.jpg">
   <div class="message-name">
     <h3><%= campaign.campaign_name %></h3>
-    <p>10/07/17</p>
+    <p><%= campaign.campaign_objective %></p>
+    <p><%= campaign.adset_name %></p>
+    <p><%= campaign.adset_start_date %></p>
+    <p><%= campaign.adset_end_date %></p>
+    <p><%= campaign.fb_campaign_id %></p>
+    <p><%= campaign.adset_billing_event %></p>
+    <p><%= campaign.adset_daily_budget %></p>
+
   </div>
   <div class="message-body">
     <p><%= campaign.adset_name%></p>
@@ -25,20 +32,3 @@
     </div>
   </div>
 </div>
-
-
-<!--
-    t.string "campaign_name"
-    t.datetime "adset_start_date"
-    t.datetime "adset_end_date"
-    t.string "adset_name"
-    t.bigint "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "fb_campaign_id"
-    t.string "campaign_objective"
-    t.string "adset_bid_amount"
-    t.string "adset_billing_event"
-    t.integer "adset_daily_budget"
-
- -->
