@@ -1,62 +1,64 @@
-<style></style>
-<main class="grid">
-  <div  class="box">
-    <h3> <%= @campaign.company.name %> </h3>
-    <hr>
+<div class="bg-dashboard">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 dashboard-padding">
+      <div class="row">
+        <div  class="col-md-6">
+            <div class="inside-dashboard-bg">
+          <h3> <%= @campaign.company.name %> </h3>
+          <hr>
 
-  <h4><%= @campaign.campaign_name %></h4>
-  <p><%= @campaign.adset_name %></p>
-  <p><%= @campaign.company_id %></p>
-  <p><%= @campaign.fb_campaign_id %></p>
+          <p><%= @campaign.campaign_name %></p>
+          <p><%= @campaign.adset_name %></p>
+          <p><%= @campaign.company_id %></p>
+          <p><%= @campaign.fb_campaign_id %></p>
 
 
-  <p><%= @campaign.ad_status %></p>
-  <p><%= @campaign.ad_name %></p>
-  <p><%= @campaign.ad_adset_id %></p>
-    <!-- CSS Grid Layout browser support text -->
-  </div>
-  <div class="box">
-    <% if @fb_campaign != [] %>
-    Status: PENDING
-    <% else %>
-    Status: LIVE
-    <% end %>
-      <p>
-        Objective:
-        <%= @campaign.campaign_objective %>
-        YOYO
-      </p>
-  </div>
+          <p><%= @campaign.ad_status %></p>
+          <p><%= @campaign.ad_name %></p>
+          <p><%= @campaign.ad_adset_id %></p>
+          <!-- CSS Grid Layout browser support text -->
+          <hr>
+          <% if @fb_campaign != [] %>
+          Status: PENDING
+          <% else %>
+          Status: LIVE
+          <% end %>
+          <p>
+            Objective:
+            <%= @campaign.campaign_objective %>
 
-  <div class="box" style="display: flex; flex-direction: column; justify-content: flex-end;">
-    <% if @fb_campaign != [] %>
-    <div class="card fb-blue white">
-      <h3> Facebook Ad</h3>
-      <ul>
-        <li>ID:<%= @fb_campaign.first.id %></li>
-        <li>Name:<%= @fb_campaign.first.name %></li>
-      </ul>
+          </p>
+          <hr>
+          <h3>Audience</h3>
+          <p>Ages:<%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %></p>
+          <p><%= @campaign.adset_location %></p>
+        </div>
+        </div>
+        <div class="col-md-6">
+          <% if @fb_campaign != [] %>
+          <div class="card fb-blue white">
+            <h3> Facebook Ad</h3>
+            <ul>
+              <li>ID:<%= @fb_campaign.first.id %></li>
+              <li>Name:<%= @fb_campaign.first.name %></li>
+            </ul>
+          </div>
+          <% else %>
+          <%= button_to "Confirm creation of the campaign on Facebook", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
+          <% end %>
+
+        <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+
+        <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
+
+        </div>
+      </div>
     </div>
-    <% else %>
-    <%= button_to "Confirm creation of the campaign on Facebook", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
-    <% end %>
   </div>
-  <div class="box">
-  <h2>Audience</h2>
-  <p>
-  Ages:
-<%= @campaign.adset_age_min %>
-  to
-  <%= @campaign.adset_age_max %></p>
-  <p>
-    <%= @campaign.adset_location %>
-  </p>
-  </div>
-<%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+</div>
+</div>
 
-  <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
-
-</main>
 
 
 
