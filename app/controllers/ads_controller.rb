@@ -8,8 +8,8 @@ class AdsController < ApplicationController
   end
 
   def create
-
     @ad = Ad.new(ad_params)
+    @ad.ad_creative_object_image_file = params[:ad][:ad_creative_object_image_file]
     @ad.campaign_id = @campaign.id
     if @ad.save!
       flash[:notice] = "Ad #{@ad.ad_name} created!"

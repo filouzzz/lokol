@@ -26,7 +26,7 @@
             <!-- params.require(:ad).permit(:ad_name, :ad_creative_object_story_spec_plink_data_message, :ad_creative_title, :ad_creative_body, :ad_creative_object_ur, :ad_creative_object_image_file)
              -->
         <div class= "text-message" id="preview_div_comment"></div>
-        <div class="img_message"><img id="output_image"/></div>
+        <div class="img_message"><img id="output_image" src="<%= cl_image_path ad.ad_creative_object_image_file.path if ad.ad_creative_object_image_file  %>"/></div>
         <div id="preview_div_title"><%= ad.ad_creative_title %></div>
         <div id="preview_div_description"><%= ad.ad_creative_body %></div>
         <div id="preview_div_url"><%= ad.ad_creative_object_ur %></div>
@@ -75,3 +75,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  function preview_image(event)
+  {
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+      var output = document.getElementById('output_image');
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
