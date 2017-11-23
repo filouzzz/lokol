@@ -18,6 +18,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'pundit'
 gem 'facebookads'
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
