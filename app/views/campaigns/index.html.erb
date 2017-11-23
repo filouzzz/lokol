@@ -25,9 +25,9 @@
     <p class="status pending"><%= campaign.adset_bid_amount%> €</p>
     <p class="price"><%= campaign.adset_billing_event%> €</p>
   </div>
+  <li><%= link_to 'Create a new Ad!', new_company_campaign_path(campaign), class: "btn rounded-camp"%></li>
   </div>
 
-  <li><%= link_to 'Create a new local Ad!', new_company_campaign_path(company), class: "btn rounded-camp"%></li>
 
       </div>
       <% end %>
