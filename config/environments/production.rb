@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
   config.action_mailer.default_url_options = { host: "lokol.herokuapp.com" }
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -10,6 +11,10 @@ config.action_mailer.delivery_method = :smtp
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+
+  # try to fix the images  deployement 22/11 19h54
+  config.serve_static_files = true
+  config.assets.compile = true
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -89,4 +94,8 @@ config.action_mailer.delivery_method = :smtp
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method     = :postmark
+  config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
+  config.action_mailer.default_url_options = { host: "stephanlokol.herokuapp.com" }
 end

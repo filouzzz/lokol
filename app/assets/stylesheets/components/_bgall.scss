@@ -1,3 +1,6 @@
+// replacing 22/11 19h57 url par image-url
+
+
 .bg-home{
   //position: absolute;
     z-index: 0;
@@ -5,9 +8,9 @@
     width: 100%;
     left: 0;
     padding: 15px;
-  //top: 0;
-  //background-color:#d8d7d7;
-  background-image: url("/assets/lokoshop-14.jpg");
+
+  background-image:image-url("lokoshop-14.jpg");
+
   background-size:cover;
   background-position: center;
   color:white;
@@ -18,7 +21,7 @@ section{
 }
 
 .imgbg1{
-  background-image: url("img10.jpg");
+  background-image:image-url("img10.jpg");
   background-size:cover;
   background-position: bottom;
   color:white;
@@ -36,7 +39,7 @@ section{
     padding: 20px;
 }
 .imgbg1-insta{
-  background-image: url("insta.png");
+  background-image:image-url("insta.png");
   background-size:cover;
   background-position: bottom;
   color:white;
@@ -80,7 +83,7 @@ section{
 
 .learn-2{
  background-color:red;
- background-image:url("img5.jpg");
+ background-image:image-url("img5.jpg");
  height: 500px;
  background-attachment: fixed;
  background-position: center;
@@ -122,7 +125,7 @@ section{
   border:2px dashed #e8e8e8;
 }
 .bg-company{
-  background-image:url("/assets/lokoshop-11.jpg");
+  background-image:image-url("lokoshop-11.jpg");
   min-height: 800px;
   background-attachment: fixed;
   background-position: center;
@@ -149,7 +152,7 @@ section{
 }
 
 .bg-profile{
-  background-image:url("/assets/lokoshop-13.jpg");
+  background-image:image-url("lokoshop-13.jpg");
   min-height: 800px;
   background-attachment: fixed;
   background-position: center;

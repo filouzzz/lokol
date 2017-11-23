@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/privacypolicy'
 
   get 'previews/demo'
 
