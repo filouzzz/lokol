@@ -1,23 +1,31 @@
-  <div class="wrapper">
+  <div class="bg-company">
   <div class="container">
     <div class="row">
       <% @campaigns.each do |campaign| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="card-description">
-        <div class="thumbnail">
-          <div class="caption">
-            <h2><%= campaign.campaign_name %></h2>
-            <p><%= campaign.adset_name%></p>
-            <p><%= campaign.adset_bid_amount%></p>
-            <p><%= campaign.adset_billing_event%></p>
-          </div>
-        </div>
-        </div>
+      <hr >
+      <div class="col-sm-12 col-md-12">
+        <div class="message">
+  <img class="avatar-small" src="/assets/lokoshop-8.jpg">
+  <div class="message-name">
+    <h3><%= campaign.campaign_name %></h3>
+    <p>10/07/17</p>
+  </div>
+  <div class="message-body">
+    <p><%= campaign.adset_name%></p>
+
+  </div>
+  <div class="message-status">
+    <p class="status pending"><%= campaign.adset_bid_amount%> €</p>
+    <p class="price"><%= campaign.adset_billing_event%> €</p>
+  </div>
+  </div>
+
       </div>
       <% end %>
     </div>
   </div>
 </div>
+
 
 <!--
     t.string "campaign_name"
