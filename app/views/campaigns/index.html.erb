@@ -1,33 +1,52 @@
   <div class="bg-company">
-  <div class="container">
-    <div class="row">
-      <% @campaigns.each do |campaign| %>
-      <hr >
-      <div class="col-sm-12 col-md-12">
-        <div class="message">
-  <img class="avatar-small" src="/assets/lokoshop-8.jpg">
-  <div class="message-name">
-    <h3><%= campaign.campaign_name %></h3>
-    <p><%= campaign.campaign_objective %></p>
-    <p><%= campaign.adset_name %></p>
-    <p><%= campaign.adset_start_date %></p>
-    <p><%= campaign.adset_end_date %></p>
-    <p><%= campaign.fb_campaign_id %></p>
-    <p><%= campaign.adset_billing_event %></p>
-    <p><%= campaign.adset_daily_budget %></p>
+    <div class="container">
+      <div class="row">
+        <% @campaigns.each do |campaign| %>
+        <hr >
 
-  </div>
-  <div class="message-body">
-    <p><%= campaign.adset_name%></p>
+        <div class="col-sm-12 col-md-12">
 
-  </div>
-  <div class="message-status">
-    <p class="status pending"><%= campaign.adset_bid_amount%> €</p>
-    <p class="price"><%= campaign.adset_billing_event%> €</p>
-  </div>
-  <li><%= link_to 'Create a new Ad!', new_company_campaign_ad_path(campaign.company, campaign), class: "btn rounded-camp"%></li>
-  </div>
 
+          <div class="row">
+<div class="message">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="message-status2">
+                <%= link_to 'Create a new Ad!', new_company_campaign_path(campaign), class: "btn rounded-camp"%>
+              </div>
+            </div>
+            <div class=" col-xs-6 col-sm-6 col-md-3">
+              <div class="message-name">
+                <h3><%= campaign.campaign_name %></h3>
+                <p>objective: <%= campaign.campaign_objective %></p>
+                <p>start: <%= campaign.adset_start_date %></p>
+                <p>end:<%= campaign.adset_end_date %></p>
+
+
+              </div>
+            </div>
+            <div class=" col-xs-6 col-sm-6 col-md-3">
+              <div class="message-body">
+              <p><%= campaign.adset_name%></p>
+              <p><%= campaign.fb_campaign_id %></p>
+              <p><%= campaign.adset_billing_event %></p>
+              <p><%= campaign.adset_daily_budget %></p>
+
+            </div>
+          </div>
+            <div class="col-xs-6 col-sm-6 col-md-2">
+              <div class="message-status">
+                <p class="status pending"><%= campaign.adset_bid_amount%> €</p>
+                <p class="price"><%= campaign.adset_billing_event%> €</p>
+              </div>
+            </div>
+              <div class="col-md-2 hidden-xs hidden-sm">
+
+                <img class="avatar-small" src="/assets/lokoshop-8.jpg">
+
+
+            </div>
+          </div>
+        </div>
 
       </div>
       <% end %>
