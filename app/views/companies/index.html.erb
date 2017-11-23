@@ -17,10 +17,11 @@
           <div class='product-count'><%= company.id %></div>
         </div>
         <% if company.photo.nil? %>
-        <img src="./assets/images/img3.jpg" alt="kudoz" class="product-image hidden-xs">
+          <%= image_tag("netw.png", class: "product-image hidden-xs") %>
+
         <% else %>
 
-        <%= cl_image_tag company.photo.path, class: "product-image hidden-xs" %>
+          <%= cl_image_tag company.photo.path, class: "product-image hidden-xs" %>
         <% end %>
         <div class='product-body'>
          <h2><%= company.name %></h2>
