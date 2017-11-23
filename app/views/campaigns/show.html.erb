@@ -52,8 +52,10 @@
               <%= render 'ad-preview', ad: ad %>
             <% end %>
           </div>
+
           <div class="col-sm-6 col-sm-offset-3 col-xs-12">
             <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+            <br>
             <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
 
           </div>
