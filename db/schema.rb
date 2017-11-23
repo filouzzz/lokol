@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122155749) do
+ActiveRecord::Schema.define(version: 20171123142756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ads", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ad_status"
+    t.string "ad_name"
+    t.string "ad_adset_id"
+    t.string "ad_creative_object_story_spec_page_id"
+    t.string "ad_creative_object_story_spec_plink_data"
+    t.string "ad_creative_object_story_spec_plink_data_link"
+    t.string "ad_creative_object_story_spec_plink_data_message"
+    t.string "ad_creative_object_story_spec_plink_data_name"
+    t.string "ad_creative_object_story_spec_plink_data_attachment_style"
+    t.string "ad_creative_object_story_spec_plink_data_call_to_action"
+    t.string "ad_creative_title"
+    t.string "ad_creative_body"
+    t.string "ad_creative_object_ur"
+    t.string "ad_creative_object_image_file"
+    t.bigint "campaign_id"
+    t.index ["campaign_id"], name: "index_ads_on_campaign_id"
+  end
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string "attachinariable_type"
@@ -58,20 +79,6 @@ ActiveRecord::Schema.define(version: 20171122155749) do
     t.string "adset_bid_amount"
     t.string "adset_billing_event"
     t.integer "adset_daily_budget"
-    t.string "ad_status"
-    t.string "ad_name"
-    t.string "ad_adset_id"
-    t.string "ad_creative_object_story_spec_page_id"
-    t.string "ad_creative_object_story_spec_plink_data"
-    t.string "ad_creative_object_story_spec_plink_data_link"
-    t.string "ad_creative_object_story_spec_plink_data_message"
-    t.string "ad_creative_object_story_spec_plink_data_name"
-    t.string "ad_creative_object_story_spec_plink_data_attachment_style"
-    t.string "ad_creative_object_story_spec_plink_data_call_to_action"
-    t.string "ad_creative_title"
-    t.string "ad_creative_body"
-    t.string "ad_creative_object_ur"
-    t.string "ad_creative_object_image_file"
     t.integer "adset_age_min"
     t.integer "adset_age_max"
     t.string "adset_location"
@@ -139,6 +146,7 @@ ActiveRecord::Schema.define(version: 20171122155749) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ads", "campaigns"
   add_foreign_key "campaigns", "companies"
   add_foreign_key "companies", "users"
   add_foreign_key "profiles", "users"
