@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
-  before_action :set_campaign, only: [:new]
-  before_action :set_company, only: [:new]
+  before_action :set_campaign, only: [:new, :create]
+  before_action :set_company, only: [:new, :create]
   before_action :set_ad, only: [:destroy]
 
   def new
@@ -11,9 +11,9 @@ class AdsController < ApplicationController
 
     @ad = Ad.new(ad_params)
     @ad.campaign_id = @campaign.id
-    if @campaign.save!
-      flash[:notice] = "Ad #{@campaign.ad_name} created!"
-      redirect_to company_campaigns_path(@campaign.company, @campaign)
+    if @ad.save!
+      flash[:notice] = "Ad #{@ad.ad_name} created!"
+      redirect_to company_campaign_path(@campaign.company, @campaign)
     else
       render :new
     end
