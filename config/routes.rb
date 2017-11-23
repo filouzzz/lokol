@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :campaigns do
       post "/create_facebook_campaign",  to: "campaigns#create_facebook_campaign", as: "create_facebook"
       post "/create_facebook_adset", to: "campaigns#create_facebook_adset", as: "create_adset"
+      resources :ads do
+        post "create_facebook_ad", to: "ads#create_facebook_ad", as: "create_ad"
+      end
+
     end
   end
 

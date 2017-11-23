@@ -18,7 +18,6 @@ class ChangeColumnsNameAddColmuns < ActiveRecord::Migration[5.1]
     add_column :audiences, :adset_targeting_geo_locations_countries, :string
     add_column :audiences, :adset_targeting_geo_locations_country_group, :string
 
-
     add_column :campaigns, :ad_status, :string
     add_column :campaigns, :ad_name, :string
     add_column :campaigns, :ad_adset_id, :string
@@ -33,6 +32,7 @@ class ChangeColumnsNameAddColmuns < ActiveRecord::Migration[5.1]
     add_column :campaigns, :ad_creative_body, :string
     add_column :campaigns, :ad_creative_object_ur, :string
     add_column :campaigns, :ad_creative_object_image_file, :string
+
 
     remove_column :campaigns, :facebook_link, :string
     remove_column :campaigns, :twitter_link, :string
