@@ -33,7 +33,7 @@ class AdsController < ApplicationController
   end
 
   def ad_params
-    params.require(:ad).permit(:ad_status, :ad_name, :ad_creative_object_story_spec_plink_data_message, :ad_creative_title, :ad_creative_body, :ad_creative_object_ur)
+    params.require(:ad).permit(:ad_name, :ad_creative_object_story_spec_plink_data_message, :ad_creative_title, :ad_creative_body, :ad_creative_object_ur, :ad_creative_object_image_file)
   end
 end
 
