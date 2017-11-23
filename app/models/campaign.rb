@@ -5,6 +5,7 @@ class Campaign < ApplicationRecord
   validates :campaign_name, presence: true
   after_create :send_launch_campaign_email
   after_update :send_update_email
+  has_many :ads
 
   private
 
