@@ -9,9 +9,9 @@ Object URL
  -->
 
 
-  <div class="facebook-font">facebook ad preview</div>
+  <div class="facebook-font ">facebook ad preview</div>
 
-<div class="bigcont">
+<div class="bigcont bg-ad-preview">
 <!--input -->
   <div class="col-md-6 text-center">
     <div class="form_container_preview">
@@ -30,7 +30,9 @@ Object URL
           <input name="ad[ad_creative_object_ur]" class="rounded-facebook-demo" id="text_url"onkeyup="preview_url();" placeholder="Url of your page">
         </li>
         <li>
-          <input class="rounded-facebook-demo" type="file" onchange="preview_image(event)">
+          <label class="btn btn-block btn-primary"> upload image
+          <input class="rounded-facebook-demo" type="file" onchange="preview_image(event)" style="display: none;"" >
+        </label>
         </li>
       </ul>
 

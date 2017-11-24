@@ -5,9 +5,8 @@
         <div class="row">
           <div  class="col-md-6">
             <div class="inside-dashboard-bg">
-              <h3> <%= @campaign.company.name %> </h3>
+              <h4> <%= @campaign.company.name %> </h4>
               <hr>
-
               <p>Name: <%= @campaign.campaign_name %></p>
               <p><%= @campaign.adset_name %></p>
               <p><%= @campaign.company_id %></p>
@@ -21,42 +20,41 @@
               <% else %>
               Status: LIVE
               <% end %>
-              <p>
-                Objective:
-                <%= @campaign.campaign_objective %>
-
-              </p>
+              <p>Objective: <%= @campaign.campaign_objective %></p>
               <hr>
-              <h3>Audience</h3>
+              <h4>Audience</h4>
               <p>Ages:<%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %></p>
               <p><%= @campaign.adset_location %></p>
             </div>
             <% if @fb_campaign != [] %>
-            <div class="card fb-blue white" style="padding: 5px;">
-              <h3> Facebook Ad</h3>
+            <div class="formfb-ads">
               <ul>
-                <li>ID:<%= @fb_campaign.first.id %></li>
-                <li>Name:<%= @fb_campaign.first.name %></li>
+                <li><h4> Facebook Ad</h4></li>
+                <li>your campaign ID: <%= @fb_campaign.first.id %></li>
               </ul>
+              <br>
             </div>
-
+              <br>
             <% else %>
-            <%= button_to "Confirm creation of the campaign on Facebook", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn-lightgrey' %>
+            <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn rounded-dashboard' %>
             <% end %>
           </div>
 
 
           <div class="col-md-6">
-            <div class="facebook-font">running facebook ads</div>
+
+            <%= link_to 'Create a new Ad!', new_company_campaign_path(@campaign), class: "btn rounded-dashboard-btn"%>
+
+            <div class="facebook-font">Running facebook ads</div>
             <% @campaign.ads.each do |ad| %>
               <%= render 'ad-preview', ad: ad %>
             <% end %>
           </div>
 
-          <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-            <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn-lightgrey' %>
+          <div class="col-sm-6 col-sm-offset-2 col-xs-12 ">
+            <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-dashboard-btn' %>
             <br>
-            <%= link_to "Update campaign infos",  edit_company_campaign_path(@company, @campaign), class: 'btn-lightgrey'  %>
+
 
           </div>
         </div>

@@ -99,9 +99,99 @@ background-position: center;
   font-size: 15px;
   margin-bottom: 10px;
 }
+.rounded-dashboard{
+  background-color: #6156f2;
+  border-color: #6156f2;
+  border-radius: 2px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  text-decoration:none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    &:hover{
+      background-color: rgba(97, 86, 242, 0.57);
+  border-color: #6156f2;
+  border-radius: 2px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  text-decoration:none;
+    }
+}
 
 .rounded-camp{
-  background-color: rgb(172, 173, 173);
+  background-color: rgb(242, 170, 132);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+   &:hover{
+    background-color: rgb(245, 130, 69);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: #f5f5f5;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+   }
+}
+.rounded-camp-new-ad{
+  background-color: #ff6565;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+   &:hover{
+    background-color: rgba(246, 75, 75, 0.99);
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: #f5f5f5;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+   }
+}
+
+.quad-camp-new-ad{
+  background-color: #ff6565;
+  border-color: #f5f5f5;
+  border-radius: 4px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all 0.15s ease;
+   &:hover{
+    background-color: rgba(246, 75, 75, 0.99);
+
+  border-radius: 4px;
+  color: #f5f5f5;
+
+   }
+}
+.rounded-dashboard-btn{
+  background-color: #ff8654;
   border-color: #f5f5f5;
   border-radius: 20px;
   color: black;
@@ -109,6 +199,19 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
+  border: 2px solid white;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+   &:hover{
+    background-color: #ffa081;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+   }
 }
 .rounded-camp-head{
   background-color: black;
@@ -119,9 +222,12 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      transition: all 0.15s ease;
       &:hover{
         background-color: white;
         border-color: black;
+        color: black!important;
       }
 }
 .rounded-profile{
@@ -133,6 +239,7 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .rounded-login{
@@ -144,8 +251,8 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
-}
-.rounded-login:hover{
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      &:hover{
   background-color: rgba(245, 245, 245, 0.15);
   border-color: #f5f5f5;
   border-radius: 20px;
@@ -154,6 +261,8 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
 }
 
 .rounded-white {
@@ -295,7 +404,6 @@ position: relative;
 background-size: cover;
 background-position: center;
 height:800px;
-
 position: relative;
 }
 
@@ -348,7 +456,14 @@ background-position: center;
 }
 
 input.form-control {
-    max-width: 400px;
-    min-width: 200px;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.formfb-ads{
+  background-color: #656df0;
+  min-height:100px;
+  color:white;
+  padding-top: 18px;
 }
 

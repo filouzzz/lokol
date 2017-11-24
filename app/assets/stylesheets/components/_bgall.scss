@@ -145,10 +145,10 @@ section{
 
 .padtopcamp{
   padding-top:20px;
-
 }
 .padbottomcamp{
   padding-bottom:5px;
+  background-color:white;
 }
 
 .bg-profile{
@@ -172,14 +172,24 @@ section{
   background-color:#afb5fe;
   padding:20px;
   color:white!important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  max-width: 440px;
 }
 .bg-campaign-inside2{
 
   background-color:#3c49e2;
   padding:20px;
   color:white!important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  max-width: 440px;
 }
-
+.bg-ad-preview{
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .bg-dashboard{
    background-image:url("/assets/lokoshop-22.jpg");
   min-height: 800px;
