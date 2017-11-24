@@ -3,20 +3,20 @@
   <div class="bg-campaign-inside">
   <h4>Objective</h4>
   <%= simple_form_for [@company, @campaign] do |f| %>
-  <%= f.input :campaign_name, placeholder: "Name of your campaign" %>
-  <%= f.input :campaign_objective, collection: ['LINK_CLICKS', 'APP_INSTALLS', 'IMPRESSIONS', 'OFFER_CLAIMS', 'PAGE_LIKES', 'POST_ENGAGEMENT', 'VIDEO_VIEWS', 'TWO_SECOND_CONTINUOUS_VIDEO_VIEWS', 'COMPLETED_VIDEO_VIEWS', 'VIDEO_VIEWS_15S'], selected: 1 %>
+  <%= f.input :campaign_name, placeholder: "Name of your campaign", label: "Campaign Name"  %>
+  <%= f.input :campaign_objective, collection: ['LINK_CLICKS', 'APP_INSTALLS', 'IMPRESSIONS', 'OFFER_CLAIMS', 'PAGE_LIKES', 'POST_ENGAGEMENT', 'VIDEO_VIEWS', 'TWO_SECOND_CONTINUOUS_VIDEO_VIEWS', 'COMPLETED_VIDEO_VIEWS', 'VIDEO_VIEWS_15S'], selected: 1, label: "Type of campaign : per click, per display, etc."  %>
 
-  <%= f.input :adset_name, placeholder: "name of the set of ads" %>
+  <%= f.input :adset_name, placeholder: "Targeted audience", label: "Define your targeted audience"  %>
   </div>
 </div>
 <div class="col-sm-6 col-xs-12 pull-right">
   <div class="bg-campaign-inside2">
   <h4>Budget & Audience</h4>
-  <%= f.input :adset_bid_amount, placeholder: "Enter bid amount" %>
-  <%= f.input :adset_daily_budget, placeholder: "Enter daily budget" %>
-  <%= f.input :adset_age_min, placeholder: "Enter min age of target audience" %>
-  <%= f.input :adset_age_max, placeholder: "Enter max age of target audience" %>
-  <%= f.input :adset_location, collection: ["AU", "GB", "NZ", "US", "NL"], selected: 1, prompt: "Select participation country" %>
+  <%= f.input :adset_bid_amount, placeholder: "Enter amount in cents", label: "Budget per click or 1000 displays" %>
+  <%= f.input :adset_daily_budget, placeholder: "Enter amount in cents", label: "Budget per day" %>
+  <%= f.input :adset_age_min, placeholder: "Minimum Age", label: "Minimum age of your audience"  %>
+  <%= f.input :adset_age_max, placeholder: "Maximum Age", label: "Maximum age of your audience"  %>
+  <%= f.input :adset_location, collection: ["BE", "FR", "AU", "GB", "NZ", "US", "NL"], selected: 1, prompt: "Select participation country", label: "Country targeted"  %>
 <%= f.submit 'Start my campaign', class: "btn rounded-camp" %>
   <% end %>
 </div>

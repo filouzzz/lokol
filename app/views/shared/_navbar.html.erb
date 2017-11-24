@@ -22,7 +22,9 @@
         <% if current_user.companies.empty?  %>
           <%= link_to "Create company", new_company_path, class: " rounded-camp" %>
         <% else  %>
+
           <%= link_to "My company", '/companies', class: " rounded-camp-new-ad" %>
+
         <% end %>
       <% end %>
 
