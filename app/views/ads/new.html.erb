@@ -30,14 +30,25 @@ Object URL
           <input name="ad[ad_creative_object_ur]" class="rounded-facebook-demo" id="text_url"onkeyup="preview_url();" placeholder="Url of your page">
         </li>
         <li>
+
           <label class="btn btn-block btn-primary"> upload image
           <input class="rounded-facebook-demo" type="file" onchange="preview_image(event)" style="display: none;"" >
         </label>
         </li>
       </ul>
 
+
+      <%= simple_form_for [@company, @campaign, @ad] do |f| %>
+
+        <%= f.input :ad_creative_object_image_file, :as => :file, :input_html => {:onchange => "preview_image(event)"}, as: :attachinary, class: "rounded-facebook-demo" %>
+
+
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
       <input type="submit" value="Build ad!" class="btn">
+      <% end %>
+
+        </li>
+      </ul>
       </form>
     </div>
   </div>

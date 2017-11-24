@@ -1,8 +1,10 @@
   <div class="bg-company">
     <div class="container">
       <div class="row">
+
         <div class="message-status2" style="margin-top: 10px;">
           <%= link_to 'Create a new Campaign', new_company_campaign_path(@company), class: "btn rounded-camp-new-ad"%>
+
         </div>
         <% @campaigns.each do |campaign| %>
         <hr>
@@ -11,11 +13,13 @@
 
 
           <div class="row">
+
             <div class="message">
               <div class="col-xs-6 col-sm-6 col-md-3">
                 <div class="message-status2">
                   <%= link_to 'Create a new Ad!', new_company_campaign_ad_path(campaign.company, campaign), class: "btn quad-camp-new-ad"%>
                 </div>
+
               </div>
               <div class=" col-xs-6 col-sm-6 col-md-3">
                 <div class="message-name">

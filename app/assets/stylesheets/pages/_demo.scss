@@ -1,11 +1,16 @@
 
-.bigcont
+.bigcont-fb
 {
   display: flex;
   padding-top: 20px;
   padding-bottom: 30px;
   background-color: #3B5998;
 }
+.input{
+  text-align: center;
+  background-color: gray;
+}
+
 .form_container_preview
 {
   display:inline-block;
@@ -61,6 +66,7 @@
   font-size: 12px;
   border-color: white;
   border-radius: 2px;
+  width: 490px;
 }
 
 .fb .post {
@@ -199,7 +205,7 @@ i.shares {
 .rounded-facebook-demo{
   background-color: white;
   border-color: white;
-  border-radius: 2px;
+  border-radius: 20px;
   color: gray;
   font-size: 15px;
   margin-bottom: 10px;
@@ -209,8 +215,8 @@ i.shares {
 }
 
 input {
-    border: none;
-    border-bottom: 1px solid gray;
+  border: none;
+  border-bottom: 1px solid gray;
 }
 
 .facebook-font
@@ -223,4 +229,197 @@ input {
   padding-top: 20px;
   background-color: #3B5998;
 }
+
+//------------------------------------------------
+
+.bigcont-twtr
+{
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background-color: #1DA1F2;
+  justify-content: space-around;
+  align-items: center;
+}
+.twitter{
+  width: 560px;
+}
+.twitter-font
+{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+  padding-top: 20px;
+  background-color: #1DA1F2;
+}
+.modal-header {
+    padding: 30px 40px;
+    padding-bottom: 0px;
+    border-bottom: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border-color: white;
+  border-radius: 2px;
+}
+.permalink-header {
+    height: 48px;
+    margin-bottom: 15px;
+    float: left;
+}
+.pull-right {
+    float: right!important;
+}
+
+.avatar {
+    float: left;
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+.name-block {
+    float: left;
+}
+.fullname {
+    font-weight: bold;
+    color: #292f33;
+}
+.permalink-header .fullname {
+    display: block;
+    padding-top: 2px;
+    margin-top: 3px;
+    font-size: 18px;
+    line-height: 1.25;
+}
+.username {
+
+    color: #8899a6;
+}
+.permalink-header .username {
+    font-size: 14px;
+}
+.Icon {
+    background: transparent;
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+}
+.Icon--medium {
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0px 8px 0px 3px;
+    display: inline-block;
+    top: 5px;
+    position: relative;
+    color: #66757f;
+}
+.button-text {
+    background-repeat: no-repeat;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    background-color: #f5f8fa;
+    background-image: linear-gradient(#fff,#f5f8fa);
+}
+.follow-text {
+    color: #292f33;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.modal-body .tweet-text {
+    font-size: 14px;
+    line-height: 18px;
+    word-wrap: break-word;
+}
+.modal-body .tweet-text.max {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 34px;
+    font-weight: 300;
+    letter-spacing: .01em;
+}
+
+#preview_div_description_twitter {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 34px;
+    font-weight: 300;
+    letter-spacing: .01em;
+}
+
+.modal-body .tweet-text .link {
+    color: #2FC2EF;
+}
+.tweet-actionList {
+    margin-top: 5px;
+    height: 21px;
+}
+.tweet-action {
+    float: left;
+    margin-right: 31px;
+}
+.client-and-actions {
+    clear: both;
+    margin-top: 10px;
+}
+.client-and-actions .metadata {
+    line-height: 24px;
+    font-size: 13px;
+    color: #8899a6;
+}
+
+.modal-body {
+    padding: 30px 40px;
+    padding-top: 0px;
+}
+#output_image_twitter {
+  font-size: 14px;
+  word-wrap: break-word;
+
+  max-width: 478px;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: #141823;
+  background-color: #fff;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  box-sizing: border-box;
+}
+
+.bigcont-insta
+{
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  justify-content: space-around;
+  align-items: center;
+}
+
 
