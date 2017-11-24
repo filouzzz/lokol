@@ -456,6 +456,9 @@ background-size:cover;
 background-position: center;
 
 }
+#fileupload > input{
+  display: none!important;
+}
 
 input.form-control {
   max-width: 400px;
