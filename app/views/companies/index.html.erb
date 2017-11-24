@@ -1,26 +1,25 @@
 <%#= render "form", company_message: "Adit this Company info" %>
 
 <div class="bg-company">
-
   <div class="container">
     <div class="row">
       <div class="col-md-12 padtopcamp">
         <ul class="list-inline product-controls">
-          <li><%= link_to "Add company", new_company_path, class: "btn rounded-camp-head" %></li>
+          <li><%= link_to "Add company", new_company_path, class: " rounded-camp-head" %></li>
         </ul>
+        <br>
         <% @companies.each do |company| %>
 
         <div class="product padbottomcamp">
           <div class='product-upvote'>
             <div class="product-arrow"></div>
             <div class='product-count'><%= company.id %></div>
+
           </div>
-          <% if company.photo.nil? %>
-          <%= image_tag("netw.png", class: "product-image hidden-xs") %>
-
+          <% if company.picture? %>
+            <%= cl_image_tag company.picture.path, width: "300px", height: "200px" %>
           <% else %>
-
-          <%= cl_image_tag company.photo.path, class: "product-image hidden-xs" %>
+            <%= image_tag("netw.png", class: "product-image hidden-xs") %>
           <% end %>
           <div class='product-body'>
            <h4><%= company.name %></h4>
@@ -32,7 +31,8 @@
           <p><%= company.email %></p>
         </div>
       </div>
-
+      <div class="container-fluid">
+          <div class="row paddingbottom">
     <div class="col-md-6">
       <ul class="list-inline product-controls">
         <% if current_user.companies.any? %>
@@ -50,11 +50,14 @@
        <% end %>
      </ul>
    </div>
+</div>
+</div>
 
    <% end %>
  </div>
  <hr>
-   <br>
+
+
 </div>
 </div>
 </div>

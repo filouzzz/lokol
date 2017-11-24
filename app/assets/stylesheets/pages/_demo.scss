@@ -35,20 +35,38 @@
  padding-top: 10px;
  padding-bottom: 10px;
 }
-#preview_div_title {
+#preview_div_title
+{
+  font: bold 18px Arial;
+  padding-bottom: 5px;
+}
+#preview_div_title_insta
+{
   font: bold 18px Times;
   padding-bottom: 5px;
 }
 
-#preview_div_description {
+#preview_div_description
+{
   font: 15px Times;
 }
-#preview_div_url {
+#preview_div_description_insta
+{
+  font: 15px Times;
+}
+#preview_div_url
+ {
   padding-top: 5px;
   font:12px helvetica;
   color: #9197a3;
   text-transform: uppercase;
-
+}
+  #preview_div_url_insta
+  {
+  padding-top: 5px;
+  font:12px helvetica;
+  color: #9197a3;
+  text-transform: uppercase;
 
 }
 
@@ -254,6 +272,7 @@ input {
   padding-top: 20px;
   background-color: #1DA1F2;
 }
+
 .modal-header {
     padding: 30px 40px;
     padding-bottom: 0px;
@@ -337,12 +356,11 @@ input {
 .follow-text {
     color: #292f33;
 }
-.btn {
+.btn-tweet {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
@@ -413,9 +431,16 @@ input {
   box-sizing: border-box;
 }
 
-.bigcont-insta
+.Icon--follow  {
+
+    font-family: "rosettaIconFont";
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+}
+//-----------------------------------------
+.bigcont-instagram
 {
-  display: flex;
   padding-top: 20px;
   padding-bottom: 30px;
   background: #d6249f;
@@ -425,12 +450,116 @@ input {
   align-items: center;
 }
 
-.Icon--follow  {
-
-    font-family: "rosettaIconFont";
-    font-weight: normal;
-    font-style: normal;
-    text-align: center;
+.instagram-font
+{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
+.instagram
+{
+    margin: 10px auto;
+    position: relative;
+    max-width: 490px;
+    overflow: hidden;
+    line-height: 1.38;
+    background-color: #F6F7F8;
+    font-family: helvetica, arial, 'lucida grande', sans-serif;
+    font-size: 12px;
+    border-color: white;
+    border-radius: 2px;
+    width: 490px;
+    display: flex;
+}
+.insta-top{
+    background-color: #fff;
+    padding: 12px;
+    justify-content: space-between;
+    display:flex;
+}
+.insta-user-profile{
+    display: flex;
+}
+.insta-avatar img
+{
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
 }
 
 
+.insta-sponsor
+{
+  display: block;
+    color: #9197a3;
+    font-size: 12px;
+    padding-top: 3px;
+    box-sizing: border-box;
+}
+
+.insta-dot
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-image: url(../images/facebook/udGFHoXFdsP.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -91px -441px;
+    height: 20px;
+    margin-right: 15px;
+    margin-top: 25px;
+    width: 20px;
+}
+#download .post .top .insta-avatar img
+{
+  float: left;
+  margin-right: 8px;
+  border-radius:20px;
+}
+
+.insta-photo img
+{
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 478px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #141823;
+    background-color: #fff;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+}
+// insta-interaction
+.insta-icons{
+  justify-content: space-between;
+}
+
+#preview_div_user_insta
+{
+  color: black;
+  font-style: normal;
+}
+#output_image_insta
+{
+ max-width:100%;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+.insta-bookmark
+{
+  float: right;
+}
+.txtbottom img
+{
+  padding-left: 10px;
+}

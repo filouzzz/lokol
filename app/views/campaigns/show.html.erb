@@ -5,62 +5,75 @@
         <div class="row">
           <div  class="col-md-6">
             <div class="inside-dashboard-bg">
-            <%= link_to 'Create a new Facebook Ad!', new_company_campaign_path(@campaign), class: "btn rounded-dashboard-btn"%>
-              <h3> <%= @campaign.company.name %> </h3>
-              <h4><%= @campaign.campaign_name %></h4>
-              <p>Type of Campaign : <%= @campaign.campaign_objective %></p>
-              <hr>
-              <h4>Audience</h4>
-              <p><%= @campaign.adset_name %></p>
-              <p>From <%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %> years old</p>
-              <p>Country <%= @campaign.adset_location %></p>
+             <%= link_to 'Create a new Ad!', new_company_campaign_ad_path(@campaign.company, @campaign), class: "btn quad-camp-new-ad"%>
+             <h3> <%= @campaign.company.name %> </h3>
+             <h4><%= @campaign.campaign_name %></h4>
+             <p>Type of Campaign : <%= @campaign.campaign_objective %></p>
+             <hr>
+             <h4>Audience</h4>
+             <p><%= @campaign.adset_name %></p>
+             <p>From <%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %> years old</p>
+             <p>Country <%= @campaign.adset_location %></p>
 
-              <!-- CSS Grid Layout browser support text -->
-              <hr>
-              <h4>Budget</h4>
-              <p> <%= @campaign.adset_bid_amount.to_i / 100 %> € / click </p>
-              <p> <%= @campaign.adset_daily_budget.to_i / 100 %> € / day</p>
-              <hr>
-            </div>
-            <% if @fb_campaign != [] %>
-            <div class="formfb-ads">
-              <ul>
-                <li><h4> Facebook Ad</h4></li>
+             <!-- CSS Grid Layout browser support text -->
+             <hr>
+             <h4>Budget</h4>
+             <p> <%= @campaign.adset_bid_amount.to_i / 100 %> € / click </p>
+             <p> <%= @campaign.adset_daily_budget.to_i / 100 %> € / day</p>
+             <hr>
+           </div>
+           <% if @fb_campaign != [] %>
+           <div class="formfb-ads">
+            <ul>
+              <li><h4> Facebook Ad</h4></li>
               <% if @fb_campaign != [] %>
               Status : PAUSED
               <% else %>
               Status : LIVE
               <% end %>
-                <li>FB campaign ID : <%= @fb_campaign.first.id %></li>
+              <p>Objective: <%= @campaign.campaign_objective %></p>
+              <hr>
+              <h4>Audience</h4>
+              <p>Ages:<%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %></p>
+              <p><%= @campaign.adset_location %></p>
+            </div>
+            <% if @fb_campaign != [] %>
+            <div class="formfb-ads">
+              <ul>
+                <li><h4> Facebook Ad</h4></li>
+                <li>your campaign ID: <%= @fb_campaign.first.id %></li>
               </ul>
               <br>
             </div>
-            <br>
+              <br>
             <% else %>
-            <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn rounded-dashboard' %>
+            <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: ' rounded-camp-new-ad-red' %>
             <% end %>
+
           </div>
-
-
-          <div class="col-md-6">
-
-
-            <div class="facebook-font">Running facebook ads</div>
-            <% @campaign.ads.each do |ad| %>
-            <%= render 'ad-preview', ad: ad %>
+          <br>
             <% end %>
-          </div>
 
+
+        <div class="col-md-6">
+
+            <%= link_to 'Create a new Ad!', new_company_campaign_path(@campaign), class: "btn quad-camp-new-ad"%>
+
+
+          <div class="facebook-font">Running facebook ads</div>
+          <% @campaign.ads.each do |ad| %>
+          <%= render 'ad-preview', ad: ad %>
+          <% end %>
+        </div>
+        </div>
           <div class="col-sm-6 col-sm-offset-2 col-xs-12 ">
-            <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-dashboard-btn' %>
+            <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-camp-new-ad-red' %>
             <br>
-
-
-          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

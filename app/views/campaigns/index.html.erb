@@ -4,7 +4,7 @@
 
         <div class="message-status2" style="margin-top: 20px;">
           <h3><%= @company.name %></h3>
-          <%= link_to 'Create a new Campaign (Audience and Budget)', new_company_campaign_path(@company), class: "btn rounded-camp-new-ad"%>
+          <%= link_to 'Create a new Campaign (Audience and Budget)', new_company_campaign_path(@company), class: " quad-camp-new-ad-blue"%>
 
         </div>
         <% @campaigns.each do |campaign| %>
@@ -17,9 +17,8 @@
             <div class="message">
               <div class="col-xs-6 col-sm-6 col-md-3">
                 <div class="message-status2">
-                  <%= link_to 'See all my Ads!', company_campaign_path(campaign.company, campaign), class: "btn quad-camp-new-ad"%>
-                  <p></p>
-                  <%= link_to 'Create a new Ad!', new_company_campaign_ad_path(campaign.company, campaign), class: "btn quad-camp-new-ad"%>
+                <p> <%= link_to 'See all my Ads!', company_campaign_path(campaign.company, campaign), class: "btn rounded-camp-new-ad-blue"%></p><br>
+                 <p> <%= link_to 'Create a new Ad!', new_company_campaign_ad_path(campaign.company, campaign), class: "btn rounded-camp-new-ad-red"%></p>
                 </div>
 
               </div>

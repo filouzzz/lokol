@@ -1,20 +1,21 @@
-<div class="col-md-6">
-  <h4>Hello <%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h4>
+
+  <div class="bg-campaign-inside">
+  <h4><%= current_user.profile.first_name %> <%= current_user.profile.last_name %></h4>
+</div>
 <%= simple_form_for [@company] do |f| %>
+<div class="col-md-6 bg-campaign-inside2">
   <%= f.input :name, label: "Name of the company or subsidiary" %>
   <%= f.input :street_number %>
   <%= f.input :street %>
-  </div>
-  <div class="col-md-6">
-    <br>
+  <%= f.input :picture, as: :attachinary %>
+</div>
+<div class="col-md-6 bg-campaign-inside3">
   <%= f.input :city %>
   <%= f.input :country %>
   <%= f.input :email %>
-  <label class="btn btn-block btn-primary"> upload image
-  <%= f.input :photo , as: :attachinary , style:"display:none" %>
-  </label>
   <%= f.submit company_message, class: "btn rounded-camp" %>
-
+  </div>
 <% end %>
-</div>
+
+
 

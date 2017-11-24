@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4 bg-profile-description">
         <div class="header-profile"></div>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,-29.7), rgba(0,0,0,9.2)), url('/assets/lokoshop-8.jpg');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,-29.7), rgba(0,0,0,9.2)), url(<%=  @company.picture? ? (cl_image_path @company.picture.path) : (image_path 'lokoshop-8.jpg'); %>);">
           <div class="card-category"> <h4><%= @company.name %></h4>
           </div>
           <div class="card-description">
