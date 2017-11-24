@@ -9,12 +9,12 @@ class Campaign < ApplicationRecord
 
   private
 
-  def send_launch_campaign_email
-    CampaignMailer.launch_campaign(self).deliver_now
-  end
+  # def send_launch_campaign_email
+  #   CampaignMailer.launch_campaign(self).deliver_now
+  # end
 
-  def send_update_email
-    CampaignMailer.update_campaign(self).deliver_now
-  end
+  # def send_update_email
+  #   CampaignMailer.update_campaign(self).deliver_now
+  # end
 
 end
