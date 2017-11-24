@@ -137,6 +137,42 @@ background-position: center;
     background-color: rgb(245, 130, 69);
    }
 }
+
+.rounded-camp-new-ad-red{
+  background-color: rgb(242, 170, 132);
+  border-color: #f5f5f5;
+  border-radius: 20px!important;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+   &:hover{
+    background-color: rgb(245, 130, 69);
+    color: white!important;
+   }
+}
+
+.rounded-camp-new-ad-blue{
+  background-color: #84b3f2;
+  border-color: #f5f5f5;
+  border-radius: 20px!important;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  text-decoration:none;
+  border: 2px solid white;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+   &:hover{
+    background-color: #2d83f6;
+    color: white!important;
+   }
+}
 .rounded-camp-new-ad{
   background-color: #6591ff;
   border-color: #f5f5f5;
@@ -149,7 +185,8 @@ background-position: center;
   border: 2px solid white;
   transition: all 0.15s ease;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-   &:hover{
+}
+   .rounded-camp-new-ad:hover{
     background-color: #3871ff;
   border-color: #f5f5f5;
   border-radius: 20px;
@@ -159,8 +196,9 @@ background-position: center;
   padding: 7px 10px;
   text-decoration:none;
   border: 2px solid white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
    }
-}
+
 
 .quad-camp-new-ad{
   background-color: #ff6565;
@@ -173,7 +211,8 @@ background-position: center;
   text-decoration:none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   transition: all 0.15s ease;
-   &:hover{
+}
+  .quad-camp-new-ad:hover{
     background-color: rgba(246, 75, 75, 0.99);
     border-color: #f5f5f5;
   border-radius: 4px;
@@ -185,10 +224,10 @@ background-position: center;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
    }
-}
+
 
 .quad-camp-new-ad-blue{
-  background-color: #ff6565;
+  background-color: #3871ff;
   border-color: #f5f5f5;
   border-radius: 4px;
   color: white;
@@ -198,8 +237,11 @@ background-position: center;
   text-decoration:none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   transition: all 0.15s ease;
-   &:hover{
-    background-color: rgba(246, 75, 75, 0.99);
+  font-weight: 400;
+
+}
+.quad-camp-new-ad-blue:hover{
+    background-color: #6591ff;
     border-color: #f5f5f5;
   border-radius: 4px;
   color: white;
@@ -208,9 +250,10 @@ background-position: center;
   padding: 7px 10px;
   text-decoration:none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  font-weight: 400;
 
    }
-}
+
 .rounded-dashboard-btn{
   background-color: #ff8654;
   border-color: #f5f5f5;
@@ -220,10 +263,10 @@ background-position: center;
   margin-bottom: 10px;
   padding: 7px 10px;
   text-decoration:none;
-
   transition: all 0.15s ease;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-   &:hover{
+}
+  .rounded-dashboard-btn:hover{
     background-color: #ffa081;
   border-color: #f5f5f5;
   border-radius: 20px;
@@ -233,7 +276,7 @@ background-position: center;
   padding: 7px 10px;
   text-decoration:none;
    }
-}
+
 .rounded-camp-head{
   background-color: #4d4d4d;
   border-color: white;
@@ -276,7 +319,8 @@ background-position: center;
   padding: 7px 10px;
   text-decoration:none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-      &:hover{
+}
+.rounded-login:hover{
   background-color: rgba(245, 245, 245, 0.15);
   border-color: #f5f5f5;
   border-radius: 20px;
@@ -287,7 +331,7 @@ background-position: center;
   text-decoration:none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
-}
+
 
 .rounded-white {
   background-color: #f5f5f5;
