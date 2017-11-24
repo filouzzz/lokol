@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
 
-        <div class="message-status2" style="margin-top: 10px;">
-          <%= link_to 'Create a new Campaign', new_company_campaign_path(@company), class: "btn rounded-camp-new-ad"%>
+        <div class="message-status2" style="margin-top: 20px;">
+          <%= link_to 'Create a new Campaign (Audience and Budget)', new_company_campaign_path(@company), class: "btn rounded-camp-new-ad"%>
 
         </div>
         <% @campaigns.each do |campaign| %>
@@ -22,27 +22,24 @@
               </div>
               <div class=" col-xs-6 col-sm-6 col-md-3">
                 <div class="message-name">
-                  <h3>Ad Campaign :: <%= campaign.campaign_name %></h3>
-                  <p>objective: <%= campaign.campaign_objective %></p>
-                  <p>start: <%= campaign.adset_start_date %></p>
-                  <p>end:<%= campaign.adset_end_date %></p>
-
+                  <p>Campaign n° :: <%= campaign.id %></p>
+                  <h2><%= campaign.campaign_name %></h2>
+                  <h3>Audience :: <%= campaign.adset_name%></h3>
 
                 </div>
               </div>
               <div class=" col-xs-6 col-sm-6 col-md-3 hidden-xs hidden-sm">
                 <div class="message-body">
-                  <p><%= campaign.adset_name%></p>
-                  <p><%= campaign.fb_campaign_id %></p>
-                  <p><%= campaign.adset_billing_event %></p>
-                  <p><%= campaign.adset_daily_budget %></p>
-
+                  <p>Type of Campaign :: <%= campaign.campaign_objective %></p>
+                  <p>Period :: Continuous </p>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-2">
                 <div class="message-status">
-                  <p class="status pending"><%= campaign.adset_bid_amount%> €</p>
-                  <p class="price"><%= campaign.adset_billing_event%> €</p>
+                  <p class="status pending"><%= campaign.adset_bid_amount.to_i / 100 %> € / click </p>
+                  <p class="price"><%= campaign.adset_daily_budget.to_i / 100 %> € / day</p>
+                  <p></p>
+
                 </div>
               </div>
               <div class="col-md-2 hidden-xs hidden-sm">
