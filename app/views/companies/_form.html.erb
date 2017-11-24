@@ -4,17 +4,15 @@
   <%= f.input :name, label: "Name of the company or subsidiary" %>
   <%= f.input :street_number %>
   <%= f.input :street %>
+  <%= f.input :picture, as: :attachinary %>
   </div>
   <div class="col-md-6">
     <br>
+    <h1>HELLO</h1>
   <%= f.input :city %>
   <%= f.input :country %>
   <%= f.input :email %>
-  <label class="btn btn-block btn-primary"> upload image
-  <%= f.input :photo , as: :attachinary , style:"display:none" %>
-  </label>
   <%= f.submit company_message, class: "btn rounded-camp" %>
-
 <% end %>
 </div>
 
