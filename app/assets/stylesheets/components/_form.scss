@@ -135,14 +135,6 @@ background-position: center;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
    &:hover{
     background-color: rgb(245, 130, 69);
-  border-color: #f5f5f5;
-  border-radius: 20px;
-  color: #f5f5f5;
-  font-size: 15px;
-  margin-bottom: 10px;
-  padding: 7px 10px;
-  text-decoration:none;
-  border: 2px solid white;
    }
 }
 .rounded-camp-new-ad{
@@ -213,7 +205,7 @@ background-position: center;
    }
 }
 .rounded-camp-head{
-  background-color: black;
+  background-color: #4d4d4d;
   border-color: white;
   border-radius: 20px;
   color: black;
@@ -472,3 +464,6 @@ input.form-control {
   padding-top: 18px;
 }
 
+.paddingbottom{
+  padding-bottom:10px;
+}
