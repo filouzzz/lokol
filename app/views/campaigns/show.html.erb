@@ -22,6 +22,11 @@
              <p> <%= @campaign.adset_daily_budget.to_i / 100 %> € / day</p>
              <hr>
            </div>
+          </div>
+          <br>
+          </ul>
+
+        <div class="col-md-6">
            <% if @fb_campaign != [] %>
            <div class="formfb-ads">
             <ul>
@@ -37,35 +42,17 @@
               <p>Ages:<%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %></p>
               <p><%= @campaign.adset_location %></p>
             </div>
-            <% if @fb_campaign != [] %>
-            <div class="formfb-ads">
-              <ul>
-                <li><h4> Facebook Ad</h4></li>
-                <li>your campaign ID: <%= @fb_campaign.first.id %></li>
-              </ul>
-              <br>
-            </div>
-              <br>
-            <% else %>
-            <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: ' rounded-camp-new-ad-red' %>
-            <% end %>
-
-          </div>
-          <br>
-            <% end %>
-
-
-        <div class="col-md-6">
-
-            <%= link_to 'Create a new Ad!', new_company_campaign_path(@campaign), class: "btn quad-camp-new-ad"%>
-
-
+          <% else %>
+            <%= button_to "Launch your campaign", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: ' rounded-camp-new-ad-red' %>
+          <% end %>
+        <% if @campaign.ads.any? %>
           <div class="facebook-font">Running facebook ads</div>
           <% @campaign.ads.each do |ad| %>
           <%= render 'ad-preview', ad: ad %>
           <% end %>
+        <% end %>
         </div>
-        </div>
+
           <div class="col-sm-6 col-sm-offset-2 col-xs-12 ">
             <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-camp-new-ad-red' %>
             <br>
