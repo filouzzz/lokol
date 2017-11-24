@@ -14,16 +14,16 @@
       <div class="navbar-wagon-item">
       <div class="dropdown">
       <% if current_user.profile.nil? %>
-      <%= link_to "New Profile", new_profile_path %>
+      <%= link_to "New Profile", new_profile_path, class: "rounded-camp-new-ad" %>
       <% else %>
-      <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", profile_path(current_user.profile), class: "rounded-camp-new-ad" %>
       <% end %>
       <% if current_user.profile %>
         <% if current_user.companies.empty?  %>
-          <%= link_to "Create company", new_company_path, class: " rounded-camp" %>
+          <%= link_to "Create company", new_company_path, class: " rounded-camp-new-ad" %>
         <% else  %>
 
-          <%= link_to "My company", '/companies', class: " rounded-camp-new-ad" %>
+          <%= link_to "Dashboard", '/companies', class: " rounded-camp-new-ad" %>
 
         <% end %>
       <% end %>
