@@ -20,14 +20,16 @@
       <% end %>
       <% if current_user.profile %>
         <% if current_user.companies.empty?  %>
-          <%= link_to "Create company", new_company_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to "Create company", new_company_path, class: " rounded-camp" %>
         <% else  %>
-          <%= link_to "My companies", '/companies', class: "navbar-wagon-item navbar-wagon-link" %>
+
+          <%= link_to "My company", '/companies', class: " rounded-camp-new-ad" %>
+
         <% end %>
       <% end %>
 
 
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
 
       </div>
       </div>
