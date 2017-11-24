@@ -31,18 +31,33 @@
               <% else %>
               Status : LIVE
               <% end %>
-              <li>FB campaign ID : <%= @fb_campaign.first.id %></li>
-            </ul>
-            <br>
+              <p>Objective: <%= @campaign.campaign_objective %></p>
+              <hr>
+              <h4>Audience</h4>
+              <p>Ages:<%= @campaign.adset_age_min %> to <%= @campaign.adset_age_max %></p>
+              <p><%= @campaign.adset_location %></p>
+            </div>
+            <% if @fb_campaign != [] %>
+            <div class="formfb-ads">
+              <ul>
+                <li><h4> Facebook Ad</h4></li>
+                <li>your campaign ID: <%= @fb_campaign.first.id %></li>
+              </ul>
+              <br>
+            </div>
+              <br>
+            <% else %>
+            <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: ' rounded-camp-new-ad-red' %>
+            <% end %>
+
           </div>
           <br>
-          <% else %>
-          <%= button_to "Confirm your Ad creation", company_campaign_create_facebook_path(@company, @campaign), method: :post, class: 'btn rounded-dashboard' %>
-          <% end %>
-        </div>
+            <% end %>
 
 
         <div class="col-md-6">
+
+            <%= link_to 'Create a new Ad!', new_company_campaign_path(@campaign), class: "btn quad-camp-new-ad"%>
 
 
           <div class="facebook-font">Running facebook ads</div>
@@ -50,12 +65,10 @@
           <%= render 'ad-preview', ad: ad %>
           <% end %>
         </div>
-
-        <div class="col-sm-6 col-sm-offset-2 col-xs-12 ">
-          <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-dashboard-btn' %>
-          <br>
-
-
+        </div>
+          <div class="col-sm-6 col-sm-offset-2 col-xs-12 ">
+            <%= link_to 'All my campaigns', company_campaign_path(@campaign.company, @campaign), class: 'btn rounded-camp-new-ad-red' %>
+            <br>
         </div>
       </div>
     </div>
