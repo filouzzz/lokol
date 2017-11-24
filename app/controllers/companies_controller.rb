@@ -44,7 +44,7 @@ skip_before_action :authenticate_user!, only: :index
   end
 
   def company_params
-    params.require(:company).permit(:name, :street, :street_number, :city, :country, :email, :photo)
+    params.require(:company).permit(:name, :street, :street_number, :city, :country, :email, :picture)
   end
 
 end

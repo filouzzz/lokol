@@ -14,13 +14,12 @@
           <div class='product-upvote'>
             <div class="product-arrow"></div>
             <div class='product-count'><%= company.id %></div>
+
           </div>
-          <% if company.photo.nil? %>
-          <%= image_tag("netw.png", class: "product-image hidden-xs") %>
-
+          <% if company.picture? %>
+            <%= cl_image_tag company.picture.path, width: "300px", height: "200px" %>
           <% else %>
-
-          <%= cl_image_tag company.photo.path, class: "product-image hidden-xs" %>
+            <%= image_tag("netw.png", class: "product-image hidden-xs") %>
           <% end %>
           <div class='product-body'>
            <h4><%= company.name %></h4>
